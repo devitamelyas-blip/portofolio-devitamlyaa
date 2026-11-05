@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Devita Melya — Junior Web Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --cream: #F0EBE0;
+    --cream: #F2EFE9;
     --off-white: #FAF8F4;
-    --ink: #0E0C09;
-    --ink-mid: #2A2520;
+    --ink: #0C0A08;
+    --ink-mid: #1A1713;
     --accent: #C8A96E;
     --accent-dark: #A0844A;
-    --muted: #7A7268;
-    --rule: rgba(200,169,110,0.25);
+    --muted: #8E867B;
+    --rule: rgba(200,169,110,0.22);
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'DM Mono', monospace;
   }
 
   html { scroll-behavior: smooth; }
@@ -26,7 +28,7 @@
   body {
     background: var(--ink);
     color: var(--cream);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sans);
     font-weight: 300;
     overflow-x: hidden;
     cursor: none;
@@ -74,9 +76,10 @@
     background: var(--rule);
   }
   .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     color: var(--cream);
     text-decoration: none;
   }
@@ -86,7 +89,7 @@
     list-style: none;
   }
   .nav-links a {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -127,7 +130,7 @@
     bottom: 3rem;
     left: 1.5rem;
     writing-mode: vertical-lr;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -144,45 +147,47 @@
   .hero-text-col {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 5rem 5rem 5rem;
+    justify-content: center;
+    padding: 3.2rem 4.5rem 1.5rem 4.5rem;
     position: relative;
+    z-index: 2;
   }
 
   .hero-index {
     position: absolute;
     top: 7rem;
     right: 5rem;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     color: var(--muted);
   }
 
   .hero-eyebrow {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     opacity: 0;
     animation: up 0.8s 0.3s forwards;
   }
 
   h1.hero-name {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 700;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
-    color: var(--off-white);
-    margin-bottom: 0.3rem;
+    font-family: var(--font-sans);
+    font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--cream);
+    margin-bottom: 0.45rem;
     opacity: 0;
     animation: up 0.9s 0.5s forwards;
   }
   h1.hero-name em {
-    font-style: italic;
+    font-style: normal;
+    font-weight: 800;
     color: var(--accent);
   }
 
@@ -190,37 +195,37 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
-    margin: 1.8rem 0 2.5rem;
+    margin: 0.85rem 0 1.25rem;
     opacity: 0;
     animation: up 0.8s 0.7s forwards;
   }
   .hero-title-line::before {
     content: '';
     display: block;
-    width: 3rem;
+    width: 2.5rem;
     height: 1px;
     background: var(--accent);
   }
   .hero-title-text {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     letter-spacing: 0.08em;
     color: var(--muted);
     text-transform: uppercase;
   }
 
   .hero-desc {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: rgba(240,235,224,0.6);
-    max-width: 28rem;
-    margin-bottom: 3rem;
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: rgba(240,235,224,0.68);
+    max-width: 33rem;
+    margin-bottom: 1.65rem;
     opacity: 0;
     animation: up 0.8s 0.9s forwards;
   }
 
   .hero-cta-group {
     display: flex;
-    gap: 1.2rem;
+    gap: 1rem;
     align-items: center;
     opacity: 0;
     animation: up 0.8s 1.1s forwards;
@@ -233,7 +238,7 @@
     padding: 0.85rem 2rem;
     background: var(--accent);
     color: var(--ink);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -263,7 +268,7 @@
     padding: 0.85rem 2rem;
     border: 1px solid rgba(200,169,110,0.4);
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.72rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -285,7 +290,7 @@
   }
   .scroll-hint span {
     writing-mode: vertical-lr;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -334,7 +339,7 @@
     display: inline-flex;
     align-items: center;
     gap: 1.5rem;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -361,7 +366,7 @@
     border-bottom: 1px solid var(--rule);
   }
   .section-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -376,12 +381,13 @@
     font-size: 0.6rem;
   }
   .skills-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 400;
-    line-height: 1.15;
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     color: var(--cream);
-    margin-top: 1.5rem;
+    margin-bottom: 2rem;
   }
   .skills-header h2 em {
     font-style: italic;
@@ -409,7 +415,7 @@
   }
   .skill-card:hover { background: var(--ink-mid); }
   .skill-tag {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -418,7 +424,7 @@
     opacity: 0.7;
   }
   .skill-card h3 {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 500;
     color: var(--cream);
@@ -430,7 +436,7 @@
     gap: 0.4rem;
   }
   .skill-pill {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.05em;
     color: var(--muted);
@@ -451,13 +457,18 @@
     margin-bottom: 4rem;
   }
   .projects-head h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 4.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     color: var(--cream);
-    line-height: 1.1;
   }
-  .projects-head h2 em { font-style: italic; color: var(--accent); }
+  .projects-head h2 em {
+    font-style: normal;
+    font-weight: 800;
+    color: var(--accent);
+  }
 
   .project-list { display: flex; flex-direction: column; }
   .project-item {
@@ -475,15 +486,16 @@
   .project-item:hover { padding-left: 1rem; }
   .project-item:hover .project-num { color: var(--accent); }
   .project-num {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
     color: var(--muted);
     transition: color 0.3s;
   }
   .project-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
     color: var(--cream);
     transition: color 0.3s;
   }
@@ -500,7 +512,7 @@
     justify-content: flex-end;
   }
   .ptag {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     color: var(--muted);
@@ -526,7 +538,7 @@
   }
   .exp-item:last-child { border-bottom: 1px solid var(--rule); }
   .exp-period {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     color: var(--muted);
@@ -534,14 +546,14 @@
     margin-bottom: 0.75rem;
   }
   .exp-role {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: 1.15rem;
     font-weight: 400;
     color: var(--cream);
     margin-bottom: 0.4rem;
   }
   .exp-company {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.7rem;
     color: var(--accent);
     letter-spacing: 0.1em;
@@ -554,7 +566,7 @@
   }
   .exp-badge {
     display: inline-block;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -572,13 +584,18 @@
     align-items: center;
   }
   .contact-big {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2.5rem, 5vw, 4.5rem);
-    font-weight: 400;
+    font-weight: 800;
+    letter-spacing: -0.035em;
     line-height: 1.1;
     color: var(--cream);
   }
-  .contact-big em { font-style: italic; color: var(--accent); }
+  .contact-big em {
+    font-style: normal;
+    font-weight: 800;
+    color: var(--accent);
+  }
   .contact-sub {
     margin-top: 1.5rem;
     font-size: 0.9rem;
@@ -603,7 +620,7 @@
   .contact-link-item:last-child { border-bottom: 1px solid var(--rule); }
   .contact-link-item:hover { padding-left: 0.75rem; }
   .cli-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -612,7 +629,7 @@
     margin-bottom: 0.3rem;
   }
   .cli-value {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.95rem;
     color: var(--cream);
     transition: color 0.3s;
@@ -633,13 +650,13 @@
     border-top: 1px solid var(--rule);
   }
   .footer-copy {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     color: var(--muted);
   }
   .footer-back {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -662,23 +679,151 @@
   .reveal-delay-2 { transition-delay: 0.22s; }
   .reveal-delay-3 { transition-delay: 0.34s; }
 
+  /* Desktop Short-Screen Responsive: ensures full hero fits on initial load */
+  @media (min-width: 769px) and (max-height: 750px) {
+    .hero-text-col {
+      padding: 2.6rem 4rem 1.2rem 4rem;
+    }
+    .hero-eyebrow {
+      margin-bottom: 0.5rem;
+    }
+    h1.hero-name {
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      margin-bottom: 0.3rem;
+    }
+    .hero-title-line {
+      margin: 0.65rem 0 1rem;
+    }
+    .hero-desc {
+      font-size: 0.88rem;
+      line-height: 1.58;
+      margin-bottom: 1.25rem;
+    }
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-ghost {
+      padding: 0.72rem 1.5rem;
+      font-size: 0.68rem;
+    }
+  }
+
+  /* Mobile & Tablet Styles */
   @media (max-width: 768px) {
-    nav { padding: 1.2rem 1.5rem; }
-    nav::after { left: 1.5rem; right: 1.5rem; }
-    .nav-links { display: none; }
-    #hero { grid-template-columns: 1fr; }
-    .hero-img-col { height: 55vw; }
-    .hero-text-col { padding: 2.5rem 1.5rem; }
-    #skills { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    body {
+      cursor: auto;
+    }
+    .cursor, .cursor-ring {
+      display: none !important;
+    }
+
+    nav {
+      padding: 1rem 1.25rem;
+    }
+    nav::after {
+      left: 1.25rem;
+      right: 1.25rem;
+    }
+    .nav-links {
+      display: none;
+    }
+    .nav-right {
+      gap: 0;
+    }
+    .lang-switcher {
+      padding: 0.2rem 0.5rem;
+      font-size: 0.65rem;
+    }
+
+    #hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      height: auto;
+      overflow: visible;
+      padding-top: 3.8rem;
+    }
+    .hero-img-col {
+      height: 72vw;
+      min-height: 250px;
+      max-height: 360px;
+      width: 100%;
+    }
+    .hero-img-col img {
+      object-position: center 18%;
+      transform: none;
+      animation: none;
+    }
+    .hero-img-col::after {
+      background: linear-gradient(to bottom, transparent 35%, rgba(12, 10, 8, 0.55) 70%, var(--ink) 100%);
+    }
+    .hero-img-label {
+      display: none;
+    }
+
+    .hero-text-col {
+      padding: 1.25rem 1.25rem 3.5rem 1.25rem;
+      justify-content: flex-start;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      margin-bottom: 0.5rem;
+    }
+    h1.hero-name {
+      font-size: clamp(2rem, 8.5vw, 2.75rem);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .hero-title-line {
+      margin: 0.75rem 0 1.2rem;
+      gap: 0.75rem;
+    }
+    .hero-title-line::before {
+      width: 1.8rem;
+    }
+    .hero-title-text {
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+    }
+    .hero-desc {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+      color: rgba(240, 235, 224, 0.72);
+    }
+    .hero-cta-group {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+    .hero-cta-group .btn-primary,
+    .hero-cta-group .btn-ghost {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.72rem;
+    }
+    .scroll-hint {
+      display: none;
+    }
+
+    #skills { grid-template-columns: 1fr; padding: 3.5rem 1.25rem; }
     .skills-grid { grid-template-columns: 1fr; }
-    #projects { padding: 4rem 1.5rem; }
+    #projects { padding: 3.5rem 1.25rem; }
     .project-item { grid-template-columns: 3rem 1fr; }
     .project-desc, .project-tags { display: none; }
-    #experience { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+    #experience { grid-template-columns: 1fr; padding: 3.5rem 1.25rem; gap: 2rem; }
     .exp-item { grid-template-columns: 1fr; }
-    #contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
-    footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
-    .scroll-hint { display: none; }
+    #contact { grid-template-columns: 1fr; padding: 3.5rem 1.25rem; gap: 2rem; }
+    footer { padding: 1.5rem 1.25rem; flex-direction: column; gap: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    .nav-logo { font-size: 1.05rem; }
+    h1.hero-name { font-size: 2.15rem; }
+    .hero-img-col { height: 78vw; max-height: 320px; }
+    .hero-text-col { padding: 1rem 1rem 3rem 1rem; }
+    #skills, #projects, #experience, #contact { padding: 3rem 1rem; }
   }
 
   /* Experience & Action Buttons */
@@ -689,7 +834,7 @@
     padding: 0.5rem 1.15rem;
     background: var(--accent);
     color: var(--ink);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -710,7 +855,7 @@
     padding: 0.5rem 1.15rem;
     border: 1px solid var(--rule);
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -737,7 +882,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.58rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -765,7 +910,7 @@
     gap: 0.4rem;
     background: transparent;
     border: none;
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -780,7 +925,7 @@
     gap: 0.6rem;
   }
   .project-live-link {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -841,7 +986,7 @@
     align-items: center;
   }
   .cs-topbar-tag {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -862,7 +1007,7 @@
     background: transparent;
     border: 1px solid var(--rule);
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -881,7 +1026,7 @@
     padding: 3rem 2.5rem 4rem;
   }
   .cs-hero-eyebrow {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -889,7 +1034,7 @@
     margin-bottom: 1rem;
   }
   .cs-modal-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: clamp(2.2rem, 4vw, 3.4rem);
     font-weight: 700;
     line-height: 1.12;
@@ -897,7 +1042,8 @@
     margin-bottom: 1rem;
   }
   .cs-modal-title em {
-    font-style: italic;
+    font-style: normal;
+    font-weight: 700;
     color: var(--accent);
   }
   .cs-modal-lead {
@@ -922,7 +1068,7 @@
     gap: 0.25rem;
   }
   .cs-meta-k {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -949,13 +1095,13 @@
     gap: 0.4rem;
   }
   .cs-metric-num {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: 1.9rem;
     font-weight: 700;
     color: var(--accent);
   }
   .cs-metric-label {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -983,7 +1129,7 @@
     background: transparent;
     border: 1px solid var(--rule);
     color: var(--muted);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.62rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1008,7 +1154,7 @@
     margin: 3.5rem 0 1.75rem;
   }
   .cs-section-heading h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: 1.65rem;
     font-weight: 400;
     color: var(--off-white);
@@ -1027,7 +1173,7 @@
   }
   .cs-tech-table th {
     background: rgba(200,169,110,0.08);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -1048,7 +1194,7 @@
     background: rgba(200,169,110,0.03);
   }
   .cs-tech-badge {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.68rem;
     color: var(--cream);
     font-weight: 500;
@@ -1077,7 +1223,7 @@
     flex-wrap: wrap;
   }
   .cs-module-num {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -1085,13 +1231,13 @@
     margin-bottom: 0.4rem;
   }
   .cs-module-title {
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-sans);
     font-size: 1.45rem;
     font-weight: 400;
     color: var(--off-white);
   }
   .cs-module-pill {
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -1120,7 +1266,7 @@
     gap: 0.5rem;
   }
   .cs-subfeat-title {
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sans);
     font-size: 0.88rem;
     font-weight: 500;
     color: var(--cream);
@@ -1160,6 +1306,54 @@
     .project-item-featured { padding-left: 0.75rem !important; }
   }
 
+
+  /* Dual-Language Switcher */
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    background: rgba(200, 169, 110, 0.08);
+    border: 1px solid var(--rule);
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.1rem 0.35rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  .lang-btn:hover {
+    color: var(--cream);
+  }
+  .lang-btn.active {
+    color: var(--ink);
+    background: var(--accent);
+    font-weight: 700;
+  }
+  .lang-divider {
+    color: rgba(200, 169, 110, 0.35);
+    font-size: 0.65rem;
+    user-select: none;
+  }
+  @media (max-width: 768px) {
+    .nav-right { gap: 0; }
+  }
+
 </style>
 </head>
 <body>
@@ -1169,45 +1363,48 @@
 
 <nav>
   <a href="#hero" class="nav-logo">DM</a>
-  <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="https://github.com/devitamelyas-blip" target="_blank">GitHub</a></li>
-  </ul>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      <li><a href="https://github.com/devitamelyas-blip" target="_blank">GitHub</a></li>
+    </ul>
+    <div class="lang-switcher" aria-label="Language selector">
+      <button type="button" class="lang-btn" id="lang-btn-id" onclick="setLanguage('id')">ID</button>
+      <span class="lang-divider">|</span>
+      <button type="button" class="lang-btn active" id="lang-btn-en" onclick="setLanguage('en')">EN</button>
+    </div>
+  </div>
 </nav>
 
 <section id="hero">
   <div class="hero-img-col">
     <img src="assets/images/foto_1.jpg" alt="Devita Melya">
-<span class="hero-img-label">
-Junior Software Developer — 2026
-</span>  </div>
+<span class="hero-img-label" data-i18n="hero_img_label">Junior Software Developer — 2026</span>  </div>
 
   <div class="hero-text-col">
-    <p class="hero-eyebrow">Open to opportunities</p>
+    <p class="hero-eyebrow" data-i18n="hero_eyebrow">Open to opportunities</p>
     <h1 class="hero-name">Devita<br><em>Melya</em></h1>
 
     <div class="hero-title-line">
-      <span class="hero-title-text">Junior Software Developer · Full Stack</span>
+      <span class="hero-title-text" data-i18n="hero_title_text">Junior Software Developer · Full Stack</span>
     </div>
 
-    <p class="hero-desc">
-      Information Technology graduate from Universitas Brawijaya with hands-on experience engineering enterprise platforms and scalable back-office systems. Currently developing the all-in-one Enterprise CMS & Operational Back-Office System at PT Kencana Maju Bersama, previously completed MagangHub Batch 2 at CEBES Indonesia, delivering robust full-stack applications with Vue 3, TypeScript, Laravel, FastAPI, and PostgreSQL.
-    </p>
+    <p class="hero-desc" data-i18n="hero_desc">Information Technology graduate from Universitas Brawijaya with hands-on experience engineering enterprise platforms and scalable back-office systems. Currently developing the all-in-one Enterprise CMS & Operational Back-Office System at PT Kencana Maju Bersama, previously completed MagangHub Batch 2 at CEBES Indonesia, delivering robust full-stack applications with Vue 3, TypeScript, Laravel, FastAPI, and PostgreSQL.</p>
 
     <div class="hero-cta-group">
       <button type="button" onclick="openCaseStudyModal(event)" class="btn-primary" style="cursor: pointer; border: none;">
-        <span>Featured Case Study</span>
+        <span data-i18n="hero_cta_cs">Featured Case Study</span>
         <span>↗</span>
       </button>
-      <a href="#projects" class="btn-ghost">View All Projects</a>
+      <a href="#projects" class="btn-ghost" data-i18n="hero_cta_projects">View All Projects</a>
     </div>
 
     <div class="scroll-hint">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-i18n="scroll_hint">Scroll</span>
     </div>
   </div>
 </section>
@@ -1240,19 +1437,11 @@ Junior Software Developer — 2026
 
 <div class="skills-header reveal">
 
-<p class="section-label" data-num="01">
-Technical Expertise
-</p>
+<p class="section-label" data-num="01" data-i18n="skills_label">Technical Expertise</p>
 
-<h2>
-Technologies<br>
-I <em>work</em><br>
-with
-</h2>
+<h2 data-i18n-html="skills_h2">Technologies<br>I <em>work</em><br>with</h2>
 
-<p>
-Experienced in enterprise web development, full-stack systems, and modern application architecture through internships and industry projects.
-</p>
+<p data-i18n="skills_lead">Experienced in enterprise web development, full-stack systems, and modern application architecture through internships and industry projects.</p>
 
 </div>
 
@@ -1337,37 +1526,37 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 <section id="experience">
   <div class="reveal">
-    <p class="section-label" data-num="02">Career Path</p>
-    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; color: var(--cream); line-height: 1.15; margin-top: 1.5rem;">
-      Professional<br><em>Experience</em>
+    <p class="section-label" data-num="02" data-i18n="exp_label">Career Path</p>
+    <h2 style="font-family: var(--font-sans); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.03em; color: var(--cream); line-height: 1.15; margin-top: 1.5rem;">
+      <span data-i18n-html="exp_h2">Professional<br><em>Experience</em></span>
     </h2>
     <p style="margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.8; color: var(--muted); max-width: 22rem;">
-      Proven track record engineering enterprise back-office platforms, custom CMS ecosystems, and microservices across manufacturing, state-owned enterprise (BUMN), and commercial sectors.
+      <span data-i18n="exp_lead">Proven track record engineering enterprise back-office platforms, custom CMS ecosystems, and microservices across manufacturing, state-owned enterprise (BUMN), and commercial sectors.</span>
     </p>
   </div>
 
   <div class="experience-list reveal reveal-delay-1">
     <div class="exp-item">
       <div>
-        <p class="exp-period">Sep 2026 — Present</p>
-        <h3 class="exp-role">Software Developer</h3>
+        <p class="exp-period" data-i18n="exp1_period">Sep 2026 — Present</p>
+        <h3 class="exp-role" data-i18n="exp1_role">Software Developer</h3>
         <p class="exp-company">PT Kencana Maju Bersama · Surabaya</p>
       </div>
       <div>
-        <span class="exp-badge">Flagship Enterprise CMS & Back-Office</span>
+        <span class="exp-badge" data-i18n="exp1_badge">Flagship Enterprise CMS & Back-Office</span>
         <p class="exp-details">
-          Architected and developed the all-in-one enterprise back-office system and CMS for Indonesia's premier SNI light steel manufacturer. Modernized the legacy WordPress infrastructure into a custom high-performance architecture using Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, and Python FastAPI.
+          <span data-i18n-html="exp1_desc1">Architected and developed the all-in-one enterprise back-office system and CMS for Indonesia's premier SNI light steel manufacturer. Modernized the legacy WordPress infrastructure into a custom high-performance architecture using Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, and Python FastAPI.</span>
         </p>
         <p class="exp-details" style="margin-top: 0.8rem;">
-          Delivered 8 core operational modules including an In-House Yoast-style SEO & AI engine with real-time Indonesian NLP analysis (15+ parameters), HR Applicant Tracking System (ATS), CRM Baja Ringan estimation telemarketing leads, Leaflet.js GIS branch network, in-browser canvas image studio, and dual-layer RBAC.
+          <span data-i18n="exp1_desc2">Delivered 8 core operational modules including an In-House Yoast-style SEO & AI engine with real-time Indonesian NLP analysis (15+ parameters), HR Applicant Tracking System (ATS), CRM Baja Ringan estimation telemarketing leads, Leaflet.js GIS branch network, in-browser canvas image studio, and dual-layer RBAC.</span>
         </p>
         <div style="margin-top: 1.3rem; display: flex; gap: 0.85rem; align-items: center; flex-wrap: wrap;">
           <button type="button" onclick="openCaseStudyModal(event)" class="exp-cs-btn">
-            <span>Read Case Study</span>
+            <span data-i18n="exp1_btn_cs">Read Case Study</span>
             <span>↗</span>
           </button>
           <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="exp-site-link">
-            <span>Visit Live Site</span>
+            <span data-i18n="exp1_btn_site">Visit Live Site</span>
             <span>↗</span>
           </a>
         </div>
@@ -1376,40 +1565,40 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
     <div class="exp-item">
       <div>
-        <p class="exp-period">Nov 2025 — May 2026</p>
-        <h3 class="exp-role">Junior Software Developer Intern</h3>
+        <p class="exp-period" data-i18n="exp2_period">Nov 2025 — May 2026</p>
+        <h3 class="exp-role" data-i18n="exp2_role">Junior Software Developer Intern</h3>
         <p class="exp-company">CEBES Indonesia · Surabaya</p>
       </div>
       <div>
         <span class="exp-badge">MagangHub Batch 2</span>
         <p class="exp-details">
-          Developed enterprise web applications using Vue.js, .NET, C#, and PostgreSQL in real-world project environments. Implemented new features and resolved application bugs within Agile development sprints, optimized PostgreSQL queries to improve data access and application performance, and collaborated with cross-functional teams on feature enhancements.
+          <span data-i18n="exp2_desc">Developed enterprise web applications using Vue.js, .NET, C#, and PostgreSQL in real-world project environments. Implemented new features and resolved application bugs within Agile development sprints, optimized PostgreSQL queries to improve data access and application performance, and collaborated with cross-functional teams on feature enhancements.</span>
         </p>
       </div>
     </div>
 
     <div class="exp-item">
       <div>
-        <p class="exp-period">Sep 2025 — Oct 2025</p>
-        <h3 class="exp-role">Front-End Developer Trainee</h3>
+        <p class="exp-period" data-i18n="exp3_period">Sep 2025 — Oct 2025</p>
+        <h3 class="exp-role" data-i18n="exp3_role">Front-End Developer Trainee</h3>
         <p class="exp-company">Belajar Bekerja by Luarsekolah · South Jakarta</p>
       </div>
       <div>
-        <span class="exp-badge">Training &amp; Certification</span>
+        <span class="exp-badge" data-i18n="exp3_badge">Training & Certification</span>
         <p class="exp-details">
-          Developed IT service website using HTML, CSS, and JavaScript. Designed responsive UI/UX, increasing user interaction by up to 20%, optimized page load speeds by up to 35%, and ensured cross-device compatibility. Awarded BNSP Junior Web Developer national certification.
+          <span data-i18n="exp3_desc">Developed IT service website using HTML, CSS, and JavaScript. Designed responsive UI/UX, increasing user interaction by up to 20%, optimized page load speeds by up to 35%, and ensured cross-device compatibility. Awarded BNSP Junior Web Developer national certification.</span>
         </p>
       </div>
     </div>
 
     <div class="exp-item">
       <div>
-        <p class="exp-period">Aug 2024 — Dec 2024</p>
-        <h3 class="exp-role">Full Stack Developer Intern</h3>
+        <p class="exp-period" data-i18n="exp4_period">Aug 2024 — Dec 2024</p>
+        <h3 class="exp-role" data-i18n="exp4_role">Full Stack Developer Intern</h3>
         <p class="exp-company">PT Industri Kereta Api (Persero) · Madiun</p>
       </div>
       <div>
-        <span class="exp-badge">BUMN Internship</span>
+        <span class="exp-badge" data-i18n="exp4_badge">BUMN Internship</span>
         <p class="exp-details">
           Engineered responsive enterprise internal web applications serving 50+ employees for Indonesia's state-owned rolling stock manufacturer. Developed a GPT-2-based chatbot automating approximately 70% of employee inquiries, performed deployment, and reduced post-release bugs by up to 30%.
         </p>
@@ -1422,8 +1611,8 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 <section id="projects">
   <div class="projects-head reveal">
     <div>
-      <p class="section-label" data-num="03">Selected Work</p>
-      <h2>Projects I've<br><em>built</em></h2>
+      <p class="section-label" data-num="03" data-i18n="projects_label">Selected Work</p>
+      <h2 data-i18n-html="projects_h2">Projects I've<br><em>built</em></h2>
     </div>
   </div>
 
@@ -1661,9 +1850,7 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 <div class="reveal">
 
-<p class="section-label" data-num="04">
-Get In Touch
-</p>
+<p class="section-label" data-num="04" data-i18n="contact_label">Get In Touch</p>
 
 <h2 class="contact-big">
 Let's build<br>
@@ -1672,7 +1859,7 @@ something<br>
 </h2>
 
 <p class="contact-sub">
-Open to full-time opportunities and collaborative projects in software engineering, web development, and enterprise applications.
+<span data-i18n="contact_lead">Open to full-time opportunities and collaborative projects in software engineering, web development, and enterprise applications.</span>
 </p>
 
 <div style="margin-top:2.5rem">
@@ -1763,13 +1950,8 @@ class="contact-link-item">
 
 <div>
 
-<span class="cli-label">
-Resume
-</span>
-
-<span class="cli-value">
-Download CV
-</span>
+<span class="cli-label" data-i18n="contact_cv_label">Resume</span>
+<span class="cli-value" data-i18n="contact_cv_val">Download CV</span>
 
 </div>
 
@@ -1792,10 +1974,10 @@ Download CV
     <div class="cs-modal-topbar">
       <div class="cs-topbar-tag">
         <span class="status-dot"></span>
-        <span>PT Kencana Maju Bersama · Enterprise System</span>
+        <span data-i18n="modal_topbar_tag">PT Kencana Maju Bersama · Enterprise System</span>
       </div>
       <button type="button" class="cs-modal-close" onclick="closeCaseStudyModal()" aria-label="Close modal">
-        <span>Close (Esc)</span>
+        <span data-i18n="modal_close_btn">Close (Esc)</span>
         <span>✕</span>
       </button>
     </div>
@@ -1804,31 +1986,26 @@ Download CV
     <div class="cs-modal-body">
 
       <!-- Hero Header -->
-      <p class="cs-hero-eyebrow">Enterprise Case Study · Full-Stack System Architecture</p>
-      <h2 class="cs-modal-title">
-        Kencana Enterprise CMS &amp;<br>
-        <em>Operational Back-Office System</em>
-      </h2>
-      <p class="cs-modal-lead">
-        Sebuah platform enterprise back-office &amp; content management system (CMS) all-in-one yang dibangun untuk mendigitalkan seluruh ekosistem operasional PT Kencana Maju Bersama (manufaktur baja ringan ber-SNI di Indonesia). Platform ini mengintegrasikan Content Publishing dengan In-House Yoast-Style SEO &amp; AI Engine, Applicant Tracking System (ATS) HR Rekrutmen, CRM Telemarketing &amp; Estimasi Prospek (Leads), Manajemen Jaringan Cabang berbasis GIS Map, Email Campaign Broadcast, serta Role-Based Access Control (RBAC) bertingkat.
-      </p>
+      <p class="cs-hero-eyebrow" data-i18n="modal_eyebrow">Enterprise Case Study · Full-Stack System Architecture</p>
+      <h2 class="cs-modal-title" data-i18n-html="modal_title">Kencana Enterprise CMS &amp;<br><em>Operational Back-Office System</em></h2>
+      <p class="cs-modal-lead" data-i18n="modal_lead">An all-in-one enterprise back-office and content management system (CMS) platform engineered to digitize the end-to-end operational ecosystem of PT Kencana Maju Bersama (Indonesia's premier SNI light steel manufacturer). The platform integrates multi-channel content publishing with an In-House Yoast-Style SEO & AI Engine, HR Career & Applicant Tracking System (ATS), Telemarketing CRM & Leads Valuation, GIS Leaflet Branch Map Management, Dynamic Inquiry Form Builders, and Multi-Tiered Role-Based Access Control (RBAC).</p>
 
       <!-- Meta Bar -->
       <div class="cs-meta-bar">
         <div class="cs-meta-item">
-          <span class="cs-meta-k">Role</span>
-          <span class="cs-meta-v">Full Stack Developer</span>
+          <span class="cs-meta-k" data-i18n="modal_meta_role">Role</span>
+          <span class="cs-meta-v" data-i18n="modal_meta_role_v">Full Stack Developer</span>
         </div>
         <div class="cs-meta-item">
-          <span class="cs-meta-k">Company</span>
+          <span class="cs-meta-k" data-i18n="modal_meta_company">Company</span>
           <span class="cs-meta-v">PT Kencana Maju Bersama</span>
         </div>
         <div class="cs-meta-item">
-          <span class="cs-meta-k">System Status</span>
-          <span class="cs-meta-v">Production Active</span>
+          <span class="cs-meta-k" data-i18n="modal_meta_status">System Status</span>
+          <span class="cs-meta-v" data-i18n="modal_meta_status_v">Production Active</span>
         </div>
         <div class="cs-meta-item">
-          <span class="cs-meta-k">Core Architecture</span>
+          <span class="cs-meta-k" data-i18n="modal_meta_arch">Core Architecture</span>
           <span class="cs-meta-v">Vue 3 · TypeScript · PrimeVue · Laravel 11 · FastAPI · Leaflet · Postgres</span>
         </div>
       </div>
@@ -1836,11 +2013,11 @@ Download CV
       <!-- Action Buttons -->
       <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 3.5rem; flex-wrap: wrap;">
         <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.75rem 1.8rem; font-size: 0.7rem;">
-          <span>Visit Live Website</span>
+          <span data-i18n="modal_btn_visit">Visit Live Website</span>
           <span>↗</span>
         </a>
         <a href="#cs-module-1" class="btn-ghost" style="padding: 0.75rem 1.8rem; font-size: 0.7rem;" onclick="scrollToSection('cs-module-1')">
-          <span>Explore Featured SEO Engine</span>
+          <span data-i18n="modal_btn_seo">Explore Featured SEO Engine</span>
           <span>↓</span>
         </a>
       </div>
@@ -2292,20 +2469,18 @@ Download CV
       <!-- Modal Footer -->
       <div class="cs-modal-footer">
         <div>
-          <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">
+          <p style="font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">
             Impact &amp; Architecture Summary
           </p>
-          <p style="font-size: 0.85rem; color: rgba(240,235,224,0.7); max-width: 32rem; margin-top: 0.4rem; line-height: 1.6;">
-            Platform ini sukses menggantikan CMS WordPress lama dengan sistem modular berkinerja tinggi, memangkas proses rekrutmen HR, mempercepat respons telemarketing leads, dan mengangkat skor SEO konten Kencana.
-          </p>
+          <p style="font-size: 0.85rem; color: rgba(240,235,224,0.7); max-width: 32rem; margin-top: 0.4rem; line-height: 1.6;" data-i18n="modal_footer_summary">This platform successfully replaced the legacy WordPress infrastructure with a high-performance modular ecosystem, streamlining HR candidate screening, accelerating telemarketing response times, and maximizing Google SEO visibility for Kencana.</p>
         </div>
         <div style="display: flex; gap: 1rem; align-items: center;">
           <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.65rem 1.5rem; font-size: 0.68rem;">
-            <span>Visit Live Website</span>
+            <span data-i18n="modal_btn_visit">Visit Live Website</span>
             <span>↗</span>
           </a>
           <button type="button" class="btn-ghost" style="padding: 0.65rem 1.5rem; font-size: 0.68rem; cursor: pointer;" onclick="closeCaseStudyModal()">
-            <span>Close Modal</span>
+            <span data-i18n="modal_btn_close">Close Modal</span>
           </button>
         </div>
       </div>
@@ -2315,8 +2490,8 @@ Download CV
 </div>
 
 <footer>
-  <p class="footer-copy">© 2025 Devita Melya — All rights reserved</p>
-  <a href="#hero" class="footer-back">Back to top ↑</a>
+  <p class="footer-copy" data-i18n="footer_copy">© 2026 Devita Melya — All rights reserved</p>
+  <a href="#hero" class="footer-back" data-i18n="footer_back">Back to top ↑</a>
 </footer>
 
 <script>
@@ -2424,6 +2599,173 @@ Download CV
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.15 });
   revealEls.forEach(el => obs.observe(el));
+
+  // Dual-Language (ID / EN) Internationalization Engine
+  const i18nData = {
+    id: {
+      nav_skills: "Keahlian",
+      nav_experience: "Pengalaman",
+      nav_projects: "Proyek",
+      nav_contact: "Kontak",
+      hero_img_label: "Junior Software Developer — 2026",
+      hero_eyebrow: "Terbuka untuk peluang karir",
+      hero_title_text: "Junior Software Developer · Full Stack",
+      hero_desc: "Lulusan Teknologi Informasi dari Universitas Brawijaya dengan pengalaman langsung membangun platform enterprise dan sistem back-office yang scalable. Saat ini mengembangkan sistem all-in-one Enterprise CMS & Operational Back-Office di PT Kencana Maju Bersama, sebelumnya menyelesaikan MagangHub Batch 2 di CEBES Indonesia, membangun aplikasi full-stack tangguh dengan Vue 3, TypeScript, Laravel, FastAPI, dan PostgreSQL.",
+      hero_cta_cs: "Studi Kasus Unggulan",
+      hero_cta_projects: "Lihat Semua Proyek",
+      scroll_hint: "Gulir",
+      skills_label: "Keahlian Teknis",
+      skills_h2: "Teknologi<br>yang Saya <em>Kuasai</em>",
+      skills_lead: "Berpengalaman dalam pengembangan web enterprise, sistem full-stack, dan arsitektur aplikasi modern melalui program magang dan proyek industri.",
+      exp_label: "Jejak Karir",
+      exp_h2: "Pengalaman<br><em>Profesional</em>",
+      exp_lead: "Rekam jejak terbukti dalam membangun platform back-office enterprise, ekosistem CMS kustom, dan arsitektur sistem di sektor manufaktur, BUMN, dan komersial.",
+      exp1_period: "Sep 2026 — Sekarang",
+      exp1_role: "Software Developer",
+      exp1_badge: "CMS & Back-Office Enterprise Unggulan",
+      exp1_desc1: "Merancang dan mengembangkan platform enterprise back-office serta CMS all-in-one untuk produsen baja ringan ber-SNI terkemuka di Indonesia. Memodernisasi infrastruktur lama WordPress menjadi arsitektur kustom berkinerja tinggi menggunakan Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, dan Python FastAPI.",
+      exp1_desc2: "Membangun 8 modul operasional utama mencakup In-House Yoast-style SEO & AI Engine dengan analisis NLP bahasa Indonesia real-time (15+ parameter), Applicant Tracking System (ATS) HR, CRM telemarketing prospek estimasi baja ringan, jaringan cabang GIS Leaflet.js, studio canvas gambar in-browser, serta RBAC bertingkat.",
+      exp1_btn_cs: "Baca Studi Kasus",
+      exp1_btn_site: "Kunjungi Website Live",
+      exp2_period: "Nov 2025 — Mei 2026",
+      exp2_role: "Magang Junior Software Developer",
+      exp2_desc: "Mengembangkan aplikasi web enterprise menggunakan Vue.js, .NET, C#, dan PostgreSQL dalam lingkungan proyek nyata. Mengimplementasikan fitur baru dan menyelesaikan bug dalam sprint Agile, mengoptimalkan query PostgreSQL untuk meningkatkan performa data, serta berkolaborasi lintas fungsi.",
+      exp3_period: "Sep 2025 — Okt 2025",
+      exp3_role: "Peserta Pelatihan Front-End Developer",
+      exp3_badge: "Pelatihan & Sertifikasi BNSP",
+      exp3_desc: "Mengembangkan website layanan IT menggunakan HTML, CSS, dan JavaScript. Mendesain UI/UX responsif yang meningkatkan interaksi pengguna hingga 20%, mempercepat kecepatan loading halaman hingga 35%, serta meraih sertifikasi nasional BNSP Junior Web Developer.",
+      exp4_period: "Agu 2024 — Des 2024",
+      exp4_role: "Magang Full Stack Developer",
+      exp4_badge: "Magang BUMN",
+      exp4_desc: "Mengembangkan aplikasi web internal dan platform alur kerja digital untuk BUMN manufaktur sarana perkeretaapian Indonesia. Membangun antarmuka responsif, mengimplementasikan RESTful API backend, dan berkolaborasi erat dengan tim rekayasa lintas fungsi selama 5 bulan di lokasi.",
+      projects_label: "Karya Terpilih",
+      projects_h2: "Proyek yang Saya<br><em>Bangun</em>",
+      contact_label: "Hubungi Saya",
+      contact_h2: "Tertarik berkolaborasi?<br><em>Mari berdiskusi.</em>",
+      contact_lead: "Terbuka untuk peluang kerja full-time serta kolaborasi proyek software engineering, web development, dan platform enterprise.",
+      contact_cv_label: "Resume",
+      contact_cv_val: "Unduh CV",
+      footer_copy: "© 2026 Devita Melya — Hak Cipta Dilindungi",
+      footer_back: "Kembali ke atas ↑",
+      modal_topbar_tag: "PT Kencana Maju Bersama · Sistem Enterprise",
+      modal_close_btn: "Tutup (Esc)",
+      modal_eyebrow: "Studi Kasus Enterprise · Arsitektur Sistem Full-Stack",
+      modal_title: "Kencana Enterprise CMS &amp;<br><em>Operational Back-Office System</em>",
+      modal_lead: "Sebuah platform enterprise back-office & content management system (CMS) all-in-one yang dibangun untuk mendigitalkan seluruh ekosistem operasional PT Kencana Maju Bersama (manufaktur baja ringan ber-SNI di Indonesia). Platform ini mengintegrasikan Content Publishing dengan In-House Yoast-Style SEO & AI Engine, Applicant Tracking System (ATS) HR Rekrutmen, CRM Telemarketing & Estimasi Prospek (Leads), Manajemen Jaringan Cabang berbasis GIS Map, Dynamic Form Builder, serta Role-Based Access Control (RBAC) bertingkat.",
+      modal_meta_role: "Peran",
+      modal_meta_role_v: "Full Stack Developer",
+      modal_meta_company: "Perusahaan",
+      modal_meta_status: "Status Sistem",
+      modal_meta_status_v: "Aktif di Produksi",
+      modal_meta_arch: "Arsitektur Inti",
+      modal_btn_visit: "Kunjungi Website Live",
+      modal_btn_seo: "Lihat Fitur SEO Engine",
+      modal_footer_summary: "Platform ini sukses menggantikan CMS WordPress lama dengan sistem modular berkinerja tinggi, memangkas proses rekrutmen HR, mempercepat respons telemarketing leads, dan mengangkat skor SEO konten Kencana.",
+      modal_btn_close: "Tutup Modal"
+    },
+    en: {
+      nav_skills: "Skills",
+      nav_experience: "Experience",
+      nav_projects: "Projects",
+      nav_contact: "Contact",
+      hero_img_label: "Junior Software Developer — 2026",
+      hero_eyebrow: "Open to opportunities",
+      hero_title_text: "Junior Software Developer · Full Stack",
+      hero_desc: "Information Technology graduate from Universitas Brawijaya with hands-on experience engineering enterprise platforms and scalable back-office systems. Currently developing the all-in-one Enterprise CMS & Operational Back-Office System at PT Kencana Maju Bersama, previously completed MagangHub Batch 2 at CEBES Indonesia, delivering robust full-stack applications with Vue 3, TypeScript, Laravel, FastAPI, and PostgreSQL.",
+      hero_cta_cs: "Featured Case Study",
+      hero_cta_projects: "View All Projects",
+      scroll_hint: "Scroll",
+      skills_label: "Technical Expertise",
+      skills_h2: "Technologies<br>I <em>work</em><br>with",
+      skills_lead: "Experienced in enterprise web development, full-stack systems, and modern application architecture through internships and industry projects.",
+      exp_label: "Career Path",
+      exp_h2: "Professional<br><em>Experience</em>",
+      exp_lead: "Proven track record engineering enterprise back-office platforms, custom CMS ecosystems, and microservices across manufacturing, state-owned enterprise (BUMN), and commercial sectors.",
+      exp1_period: "Sep 2026 — Present",
+      exp1_role: "Software Developer",
+      exp1_badge: "Flagship Enterprise CMS & Back-Office",
+      exp1_desc1: "Architected and developed the all-in-one enterprise back-office system and CMS for Indonesia's premier SNI light steel manufacturer. Modernized the legacy WordPress infrastructure into a custom high-performance architecture using Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, and Python FastAPI.",
+      exp1_desc2: "Delivered 8 core operational modules including an In-House Yoast-style SEO & AI engine with real-time Indonesian NLP analysis (15+ parameters), HR Applicant Tracking System (ATS), CRM Baja Ringan estimation telemarketing leads, Leaflet.js GIS branch network, in-browser canvas image studio, and dual-layer RBAC.",
+      exp1_btn_cs: "Read Case Study",
+      exp1_btn_site: "Visit Live Site",
+      exp2_period: "Nov 2025 — May 2026",
+      exp2_role: "Junior Software Developer Intern",
+      exp2_desc: "Developed enterprise web applications using Vue.js, .NET, C#, and PostgreSQL in real-world project environments. Implemented new features and resolved application bugs within Agile development sprints, optimized PostgreSQL queries to improve data access and application performance, and collaborated with cross-functional teams on feature enhancements.",
+      exp3_period: "Sep 2025 — Oct 2025",
+      exp3_role: "Front-End Developer Trainee",
+      exp3_badge: "Training & Certification",
+      exp3_desc: "Developed IT service website using HTML, CSS, and JavaScript. Designed responsive UI/UX, increasing user interaction by up to 20%, optimized page load speeds by up to 35%, and ensured cross-device compatibility. Awarded BNSP Junior Web Developer national certification.",
+      exp4_period: "Aug 2024 — Dec 2024",
+      exp4_role: "Full Stack Developer Intern",
+      exp4_badge: "BUMN Internship",
+      exp4_desc: "Engineered internal web applications and digital workflow platforms for Indonesia's state-owned rolling stock manufacturer. Developed responsive front-end interfaces, implemented RESTful backend APIs, and collaborated with cross-functional engineering teams during a 5-month intensive on-site program.",
+      projects_label: "Selected Work",
+      projects_h2: "Projects I've<br><em>built</em>",
+      contact_label: "Get In Touch",
+      contact_h2: "Have a project in mind?<br><em>Let's talk.</em>",
+      contact_lead: "Open to full-time opportunities and collaborative projects in software engineering, web development, and enterprise applications.",
+      contact_cv_label: "Resume",
+      contact_cv_val: "Download CV",
+      footer_copy: "© 2026 Devita Melya — All rights reserved",
+      footer_back: "Back to top ↑",
+      modal_topbar_tag: "PT Kencana Maju Bersama · Enterprise System",
+      modal_close_btn: "Close (Esc)",
+      modal_eyebrow: "Enterprise Case Study · Full-Stack System Architecture",
+      modal_title: "Kencana Enterprise CMS &amp;<br><em>Operational Back-Office System</em>",
+      modal_lead: "An all-in-one enterprise back-office and content management system (CMS) platform engineered to digitize the end-to-end operational ecosystem of PT Kencana Maju Bersama (Indonesia's premier SNI light steel manufacturer). The platform integrates multi-channel content publishing with an In-House Yoast-Style SEO & AI Engine, HR Career & Applicant Tracking System (ATS), Telemarketing CRM & Leads Valuation, GIS Leaflet Branch Map Management, Dynamic Inquiry Form Builders, and Multi-Tiered Role-Based Access Control (RBAC).",
+      modal_meta_role: "Role",
+      modal_meta_role_v: "Full Stack Developer",
+      modal_meta_company: "Company",
+      modal_meta_status: "System Status",
+      modal_meta_status_v: "Production Active",
+      modal_meta_arch: "Core Architecture",
+      modal_btn_visit: "Visit Live Website",
+      modal_btn_seo: "Explore Featured SEO Engine",
+      modal_footer_summary: "This platform successfully replaced the legacy WordPress infrastructure with a high-performance modular ecosystem, streamlining HR candidate screening, accelerating telemarketing response times, and maximizing Google SEO visibility for Kencana.",
+      modal_btn_close: "Close Modal"
+    }
+  };
+
+  function setLanguage(lang) {
+    if (!i18nData[lang]) lang = 'en';
+    document.documentElement.lang = lang;
+    
+    // Update button active state
+    const btnId = document.getElementById('lang-btn-id');
+    const btnEn = document.getElementById('lang-btn-en');
+    if (btnId) btnId.classList.toggle('active', lang === 'id');
+    if (btnEn) btnEn.classList.toggle('active', lang === 'en');
+    
+    // Update text elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18nData[lang] && i18nData[lang][key]) {
+        el.textContent = i18nData[lang][key];
+      }
+    });
+
+    // Update HTML elements
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (i18nData[lang] && i18nData[lang][key]) {
+        el.innerHTML = i18nData[lang][key];
+      }
+    });
+
+    try {
+      localStorage.setItem('portfolio_lang_v2', lang);
+    } catch(e) {}
+  }
+
+  // Initialize language on load (default to 'id' or saved)
+  document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('portfolio_lang_v2') || 'en';
+    setLanguage(savedLang);
+  });
+  // Immediate run as fallback
+  const initialLang = localStorage.getItem('portfolio_lang_v2') || 'en';
+  setLanguage(initialLang);
+
 </script>
 </body>
 </html>
