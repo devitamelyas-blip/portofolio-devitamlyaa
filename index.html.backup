@@ -680,6 +680,486 @@
     footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
     .scroll-hint { display: none; }
   }
+
+  /* Experience & Action Buttons */
+  .exp-cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.15rem;
+    background: var(--accent);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .exp-cs-btn:hover {
+    background: var(--cream);
+    border-color: var(--cream);
+    color: var(--ink);
+  }
+  .exp-site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.15rem;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .exp-site-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Featured Project Item */
+  .project-item-featured {
+    background: linear-gradient(90deg, rgba(200,169,110,0.08) 0%, rgba(200,169,110,0.01) 100%);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem !important;
+    cursor: pointer;
+  }
+  .project-item-featured:hover {
+    background: linear-gradient(90deg, rgba(200,169,110,0.14) 0%, rgba(200,169,110,0.03) 100%);
+    padding-left: 1.75rem !important;
+  }
+  .project-flagship-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,169,110,0.45);
+    background: rgba(200,169,110,0.1);
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+  }
+  .ptag-gold {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: rgba(200,169,110,0.08);
+  }
+  .project-action-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.65rem;
+  }
+  .project-cs-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px dashed var(--accent);
+    padding: 0 0 2px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .project-item-featured:hover .project-cs-action-btn {
+    border-bottom-style: solid;
+    gap: 0.6rem;
+  }
+  .project-live-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .project-live-link:hover {
+    color: var(--accent);
+  }
+
+  /* Case Study Modal Styles */
+  .cs-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 7, 5, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2.5rem 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    overflow-y: auto;
+  }
+  .cs-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .cs-modal-window {
+    background: #110F0C;
+    border: 1px solid rgba(200,169,110,0.35);
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    box-shadow: 0 35px 100px rgba(0,0,0,0.95), 0 0 60px rgba(200,169,110,0.08);
+    transform: translateY(24px) scale(0.98);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: auto;
+    color: var(--cream);
+  }
+  .cs-modal-backdrop.active .cs-modal-window {
+    transform: translateY(0) scale(1);
+  }
+  .cs-modal-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(17, 15, 12, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cs-topbar-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cs-topbar-tag .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 8px #4ADE80;
+    display: inline-block;
+  }
+  .cs-modal-close {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cs-modal-close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cs-modal-body {
+    padding: 3rem 2.5rem 4rem;
+  }
+  .cs-hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .cs-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+  }
+  .cs-modal-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .cs-modal-lead {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(240,235,224,0.75);
+    max-width: 52rem;
+    margin-bottom: 2rem;
+  }
+  .cs-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+  .cs-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .cs-meta-k {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cs-meta-v {
+    font-size: 0.82rem;
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .cs-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 3.5rem;
+    border: 1px solid var(--rule);
+  }
+  .cs-metric-box {
+    background: #110F0C;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cs-metric-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .cs-metric-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cs-metric-sub {
+    font-size: 0.75rem;
+    color: rgba(240,235,224,0.6);
+    line-height: 1.45;
+  }
+  .cs-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 2.5rem;
+    position: sticky;
+    top: 4.2rem;
+    z-index: 15;
+    background: rgba(17, 15, 12, 0.94);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-tab-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cs-tab-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cs-tab-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .cs-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3.5rem 0 1.75rem;
+  }
+  .cs-section-heading h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--off-white);
+  }
+  .cs-section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .cs-tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3.5rem;
+    border: 1px solid var(--rule);
+  }
+  .cs-tech-table th {
+    background: rgba(200,169,110,0.08);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-tech-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(240,235,224,0.8);
+    vertical-align: top;
+  }
+  .cs-tech-table tr:hover td {
+    background: rgba(200,169,110,0.03);
+  }
+  .cs-tech-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .cs-module-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--rule);
+    padding: 2.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .cs-module-card:hover {
+    border-color: rgba(200,169,110,0.5);
+  }
+  .cs-module-card.flagship {
+    background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, rgba(255,255,255,0.01) 100%);
+    border-color: rgba(200,169,110,0.5);
+  }
+  .cs-module-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .cs-module-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .cs-module-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--off-white);
+  }
+  .cs-module-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,169,110,0.4);
+    background: rgba(200,169,110,0.06);
+    padding: 0.25rem 0.65rem;
+  }
+  .cs-module-intro {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(240,235,224,0.75);
+    margin-bottom: 1.5rem;
+  }
+  .cs-subfeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .cs-subfeat-item {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(200,169,110,0.15);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cs-subfeat-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cs-subfeat-title::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 0.6rem;
+  }
+  .cs-subfeat-desc {
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: rgba(240,235,224,0.65);
+  }
+  .cs-modal-footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 2.5rem;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .cs-modal-backdrop { padding: 0.75rem 0.5rem; }
+    .cs-modal-topbar { padding: 0.8rem 1.2rem; }
+    .cs-modal-body { padding: 1.8rem 1.2rem; }
+    .cs-metrics-grid { grid-template-columns: 1fr 1fr; }
+    .cs-subfeatures { grid-template-columns: 1fr; }
+    .cs-tech-table th, .cs-tech-table td { padding: 0.75rem 0.6rem; font-size: 0.75rem; }
+    .cs-modal-footer { flex-direction: column; align-items: flex-start; }
+    .project-item-featured { padding-left: 0.75rem !important; }
+  }
+
 </style>
 </head>
 <body>
@@ -691,6 +1171,7 @@
   <a href="#hero" class="nav-logo">DM</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="https://github.com/devitamelyas-blip" target="_blank">GitHub</a></li>
@@ -706,25 +1187,22 @@ Junior Software Developer — 2026
 
   <div class="hero-text-col">
     <p class="hero-eyebrow">Open to opportunities</p>
-<p class="hero-desc">
-I build modern web applications with a focus on clean architecture, scalable systems, and intuitive user experiences. Experienced across enterprise, startup, and IT environments through projects involving Vue.js, .NET, Laravel, PostgreSQL, and REST APIs.
-</p>
     <h1 class="hero-name">Devita<br><em>Melya</em></h1>
 
     <div class="hero-title-line">
-      <span class="hero-title-text">Junior Web Developer</span>
+      <span class="hero-title-text">Junior Software Developer · Full Stack</span>
     </div>
 
-<p class="hero-desc">
-Information Technology graduate from Universitas Brawijaya with hands-on experience in enterprise and startup environments. Completed MagangHub Batch 2 as a Junior Software Developer Intern, building web applications using Vue.js, .NET, Laravel, PostgreSQL, and REST API integration.
-</p>
+    <p class="hero-desc">
+      Information Technology graduate from Universitas Brawijaya with hands-on experience engineering enterprise platforms and scalable back-office systems. Currently developing the all-in-one Enterprise CMS & Operational Back-Office System at PT Kencana Maju Bersama, previously completed MagangHub Batch 2 at PT Industri Kereta Api (Persero), delivering robust full-stack applications with Vue 3, TypeScript, Laravel, FastAPI, and PostgreSQL.
+    </p>
 
     <div class="hero-cta-group">
-      <a href="#projects" class="btn-primary">
-        <span>View Projects</span>
-        <span>↓</span>
-      </a>
-      <a href="#contact" class="btn-ghost">Let's Talk</a>
+      <button type="button" onclick="openCaseStudyModal(event)" class="btn-primary" style="cursor: pointer; border: none;">
+        <span>Featured Case Study</span>
+        <span>↗</span>
+      </button>
+      <a href="#projects" class="btn-ghost">View All Projects</a>
     </div>
 
     <div class="scroll-hint">
@@ -737,24 +1215,23 @@ Information Technology graduate from Universitas Brawijaya with hands-on experie
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
 
-    <span>Nuxt 3 <span class="dot"></span></span>
-    <span>Vue.js <span class="dot"></span></span>
-    <span>FastAPI <span class="dot"></span></span>
-    <span>Python <span class="dot"></span></span>
-    <span>Laravel <span class="dot"></span></span>
-    <span>Tailwind CSS <span class="dot"></span></span>
-    <span>Docker <span class="dot"></span></span>
-    <span>.NET <span class="dot"></span></span>
-    <span>PostgreSQL <span class="dot"></span></span>
-    <span>REST API <span class="dot"></span></span>
-    <span>JavaScript <span class="dot"></span></span>
+    <span>Vue 3 <span class="dot"></span></span>
     <span>TypeScript <span class="dot"></span></span>
+    <span>PrimeVue <span class="dot"></span></span>
+    <span>Pinia <span class="dot"></span></span>
+    <span>FastAPI (Python) <span class="dot"></span></span>
+    <span>Laravel 11 <span class="dot"></span></span>
+    <span>PostgreSQL <span class="dot"></span></span>
+    <span>Docker <span class="dot"></span></span>
+    <span>Leaflet.js <span class="dot"></span></span>
+    <span>Chart.js <span class="dot"></span></span>
+    <span>SheetJS <span class="dot"></span></span>
+    <span>Tailwind CSS <span class="dot"></span></span>
+    <span>Nuxt 3 <span class="dot"></span></span>
+    <span>.NET <span class="dot"></span></span>
     <span>C# <span class="dot"></span></span>
-    <span>PHP <span class="dot"></span></span>
-    <span>MySQL <span class="dot"></span></span>
+    <span>RESTful API <span class="dot"></span></span>
     <span>Git & GitHub <span class="dot"></span></span>
-    <span>Swagger <span class="dot"></span></span>
-    <span>Postman <span class="dot"></span></span>
 
   </div>
 </div>
@@ -787,13 +1264,15 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 <h3>Web Interface</h3>
 
 <div class="skill-items">
-<span class="skill-pill">Nuxt 3</span>
-<span class="skill-pill">Vue.js</span>
-<span class="skill-pill">Tailwind CSS</span>
-<span class="skill-pill">HTML5</span>
-<span class="skill-pill">CSS3</span>
-<span class="skill-pill">JavaScript</span>
+<span class="skill-pill">Vue 3</span>
 <span class="skill-pill">TypeScript</span>
+<span class="skill-pill">PrimeVue</span>
+<span class="skill-pill">Pinia</span>
+<span class="skill-pill">Tailwind CSS</span>
+<span class="skill-pill">Leaflet.js</span>
+<span class="skill-pill">Nuxt 3</span>
+<span class="skill-pill">JavaScript (ES6+)</span>
+<span class="skill-pill">HTML5 / CSS3</span>
 <span class="skill-pill">Bootstrap</span>
 </div>
 </div>
@@ -805,13 +1284,14 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 <h3>Application Development</h3>
 
 <div class="skill-items">
-<span class="skill-pill">Laravel</span>
+<span class="skill-pill">Laravel 10/11</span>
 <span class="skill-pill">FastAPI</span>
 <span class="skill-pill">Python</span>
+<span class="skill-pill">Laravel Sanctum</span>
 <span class="skill-pill">.NET</span>
-<span class="skill-pill">PHP</span>
 <span class="skill-pill">C#</span>
-<span class="skill-pill">REST API</span>
+<span class="skill-pill">PHP</span>
+<span class="skill-pill">RESTful API</span>
 <span class="skill-pill">Entity Framework</span>
 </div>
 
@@ -839,9 +1319,10 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 <h3>Development Workflow</h3>
 
 <div class="skill-items">
-<span class="skill-pill">Docker</span>
-<span class="skill-pill">Git</span>
-<span class="skill-pill">GitHub</span>
+<span class="skill-pill">Docker & Compose</span>
+<span class="skill-pill">Git & GitHub</span>
+<span class="skill-pill">Chart.js</span>
+<span class="skill-pill">SheetJS (XLSX)</span>
 <span class="skill-pill">Swagger</span>
 <span class="skill-pill">Postman</span>
 <span class="skill-pill">VS Code</span>
@@ -854,10 +1335,93 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 </section>
 
+<section id="experience">
+  <div class="reveal">
+    <p class="section-label" data-num="02">Career Path</p>
+    <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; color: var(--cream); line-height: 1.15; margin-top: 1.5rem;">
+      Professional<br><em>Experience</em>
+    </h2>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; line-height: 1.8; color: var(--muted); max-width: 22rem;">
+      Proven track record engineering enterprise back-office platforms, custom CMS ecosystems, and microservices across manufacturing, state-owned enterprise (BUMN), and commercial sectors.
+    </p>
+  </div>
+
+  <div class="experience-list reveal reveal-delay-1">
+    <div class="exp-item">
+      <div>
+        <p class="exp-period">Sep 2026 — Present</p>
+        <h3 class="exp-role">Software Developer</h3>
+        <p class="exp-company">PT Kencana Maju Bersama · Surabaya</p>
+      </div>
+      <div>
+        <span class="exp-badge">Flagship Enterprise CMS & Back-Office</span>
+        <p class="exp-details">
+          Architected and developed the all-in-one enterprise back-office system and CMS for Indonesia's premier SNI light steel manufacturer. Modernized the legacy WordPress infrastructure into a custom high-performance architecture using Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, and Python FastAPI.
+        </p>
+        <p class="exp-details" style="margin-top: 0.8rem;">
+          Delivered 8 core operational modules including an In-House Yoast-style SEO & AI engine with real-time Indonesian NLP analysis (15+ parameters), HR Applicant Tracking System (ATS), CRM Baja Ringan estimation telemarketing leads, Leaflet.js GIS branch network, in-browser canvas image studio, and dual-layer RBAC.
+        </p>
+        <div style="margin-top: 1.3rem; display: flex; gap: 0.85rem; align-items: center; flex-wrap: wrap;">
+          <button type="button" onclick="openCaseStudyModal(event)" class="exp-cs-btn">
+            <span>Read Case Study</span>
+            <span>↗</span>
+          </button>
+          <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="exp-site-link">
+            <span>Visit Live Site</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <p class="exp-period">Nov 2025 — May 2026</p>
+        <h3 class="exp-role">Junior Software Developer Intern</h3>
+        <p class="exp-company">PT Industri Kereta Api (Persero) · Madiun</p>
+      </div>
+      <div>
+        <span class="exp-badge">MagangHub Batch 2 · BUMN</span>
+        <p class="exp-details">
+          Engineered enterprise internal web applications serving 50+ employees using Vue.js, .NET, C#, and PostgreSQL. Implemented a GPT-2-based chatbot automating approximately 70% of employee inquiries, and reduced post-release bugs by up to 30% through structured query optimization and Agile delivery.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <p class="exp-period">Sep 2025 — Oct 2025</p>
+        <h3 class="exp-role">IT Support Intern</h3>
+        <p class="exp-company">CEBES Indonesia · Surabaya</p>
+      </div>
+      <div>
+        <span class="exp-badge">Web & IT Support</span>
+        <p class="exp-details">
+          Developed IT service website using HTML, CSS, and JavaScript. Optimized page load speeds by 35% and increased user engagement by 20% with cross-device responsive design.
+        </p>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div>
+        <p class="exp-period">Aug 2024 — Dec 2024</p>
+        <h3 class="exp-role">Front-End Developer Trainee</h3>
+        <p class="exp-company">Belajar Bekerja by Luarsekolah · South Jakarta</p>
+      </div>
+      <div>
+        <span class="exp-badge">Training & Certification</span>
+        <p class="exp-details">
+          Completed intensive front-end engineering program with responsive web interfaces, modern JavaScript, and UI/UX best practices. Awarded BNSP Junior Web Developer national certification.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="projects">
   <div class="projects-head reveal">
     <div>
-      <p class="section-label" data-num="02">Selected Work</p>
+      <p class="section-label" data-num="03">Selected Work</p>
       <h2>Projects I've<br><em>built</em></h2>
     </div>
   </div>
@@ -1027,49 +1591,45 @@ Experienced in enterprise web development, full-stack systems, and modern applic
     </div>
   </a>
 
-  <a href="https://kencanaindonesia.co.id/" target="_blank" class="project-item">
+  <div class="project-item project-item-featured" onclick="openCaseStudyModal(event)">
     <span class="project-num">10</span>
 
-    <span class="project-name">
-      Kencana Indonesia — Full Website System
-    </span>
+    <div>
+      <div class="project-flagship-pill">⭐ FLAGSHIP ENTERPRISE CASE STUDY</div>
+      <h3 class="project-name" style="cursor: pointer;">
+        Kencana Enterprise CMS & Operational Back-Office System
+      </h3>
+      <div class="project-action-row">
+        <button type="button" class="project-cs-action-btn" onclick="openCaseStudyModal(event)">
+          <span>Explore Detailed Case Study</span>
+          <span>→</span>
+        </button>
+        <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="project-live-link" onclick="event.stopPropagation()">
+          <span>Live Site ↗</span>
+        </a>
+      </div>
+    </div>
 
     <span class="project-desc">
-      Enterprise platform rebuild from WordPress into a custom-coded ecosystem: Nuxt 3 public catalog, Vue 3 + PrimeVue CMS, Laravel REST API & PostgreSQL, and FastAPI SEO engine with 16 modules. Containerized with Docker.
+      All-in-one enterprise back-office & CMS platform digitizing operations for PT Kencana Maju Bersama (SNI light steel manufacturer): In-house Yoast-style SEO & AI engine, HR ATS candidate pipeline, CRM telemarketing leads, GIS map branch network, and dual-layer RBAC.
     </span>
 
     <div class="project-tags">
-      <span class="ptag">Nuxt 3</span>
-      <span class="ptag">Vue 3</span>
-      <span class="ptag">Tailwind</span>
-      <span class="ptag">Laravel</span>
+      <span class="ptag ptag-gold">Vue 3</span>
+      <span class="ptag ptag-gold">TypeScript</span>
+      <span class="ptag">PrimeVue</span>
+      <span class="ptag">Pinia</span>
+      <span class="ptag">Laravel 11</span>
       <span class="ptag">FastAPI</span>
       <span class="ptag">PostgreSQL</span>
+      <span class="ptag">Leaflet.js</span>
+      <span class="ptag">Chart.js</span>
       <span class="ptag">Docker</span>
     </div>
-  </a>
-
-  <a href="https://github.com/devitamelyas-blip/portofolio-devitamlyaa" target="_blank" class="project-item">
-    <span class="project-num">11</span>
-
-    <span class="project-name">
-      Personal Portfolio Website
-    </span>
-
-    <span class="project-desc">
-      Personal portfolio website designed and developed to showcase software engineering projects, technical skills, and career journey with custom interactive styling.
-    </span>
-
-    <div class="project-tags">
-      <span class="ptag">HTML5</span>
-      <span class="ptag">CSS3</span>
-      <span class="ptag">JavaScript</span>
-      <span class="ptag">GitHub</span>
-    </div>
-  </a>
+  </div>
 
   <a href="https://github.com/devitamelyas-blip/QR-RuangArsip" target="_blank" class="project-item">
-    <span class="project-num">12</span>
+    <span class="project-num">11</span>
 
     <span class="project-name">
       QR Ruang Arsip — Document Archive System
@@ -1089,7 +1649,7 @@ Experienced in enterprise web development, full-stack systems, and modern applic
   </a>
 
   <a href="https://urbanservices-qa.com/" target="_blank" class="project-item">
-    <span class="project-num">13</span>
+    <span class="project-num">12</span>
 
     <span class="project-name">
       Urban Services Qatar — Commercial Web & Admin Platform
@@ -1115,7 +1675,7 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 <div class="reveal">
 
-<p class="section-label" data-num="03">
+<p class="section-label" data-num="04">
 Get In Touch
 </p>
 
@@ -1237,6 +1797,537 @@ Download CV
 
 </section>
 
+
+<!-- CASE STUDY MODAL: KENCANA ENTERPRISE CMS -->
+<div id="case-study-modal" class="cs-modal-backdrop" onclick="handleBackdropClick(event)">
+  <div class="cs-modal-window" onclick="event.stopPropagation()">
+
+    <!-- Top Bar -->
+    <div class="cs-modal-topbar">
+      <div class="cs-topbar-tag">
+        <span class="status-dot"></span>
+        <span>PT Kencana Maju Bersama · Enterprise System</span>
+      </div>
+      <button type="button" class="cs-modal-close" onclick="closeCaseStudyModal()" aria-label="Close modal">
+        <span>Close (Esc)</span>
+        <span>✕</span>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="cs-modal-body">
+
+      <!-- Hero Header -->
+      <p class="cs-hero-eyebrow">Enterprise Case Study · Full-Stack System Architecture</p>
+      <h2 class="cs-modal-title">
+        Kencana Enterprise CMS &amp;<br>
+        <em>Operational Back-Office System</em>
+      </h2>
+      <p class="cs-modal-lead">
+        Sebuah platform enterprise back-office &amp; content management system (CMS) all-in-one yang dibangun untuk mendigitalkan seluruh ekosistem operasional PT Kencana Maju Bersama (manufaktur baja ringan ber-SNI di Indonesia). Platform ini mengintegrasikan Content Publishing dengan In-House Yoast-Style SEO &amp; AI Engine, Applicant Tracking System (ATS) HR Rekrutmen, CRM Telemarketing &amp; Estimasi Prospek (Leads), Manajemen Jaringan Cabang berbasis GIS Map, Email Campaign Broadcast, serta Role-Based Access Control (RBAC) bertingkat.
+      </p>
+
+      <!-- Meta Bar -->
+      <div class="cs-meta-bar">
+        <div class="cs-meta-item">
+          <span class="cs-meta-k">Role</span>
+          <span class="cs-meta-v">Full Stack Developer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-k">Company</span>
+          <span class="cs-meta-v">PT Kencana Maju Bersama</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-k">System Status</span>
+          <span class="cs-meta-v">Production Active</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-k">Core Architecture</span>
+          <span class="cs-meta-v">Vue 3 · TypeScript · PrimeVue · Laravel 11 · FastAPI · Leaflet · Postgres</span>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 3.5rem; flex-wrap: wrap;">
+        <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.75rem 1.8rem; font-size: 0.7rem;">
+          <span>Visit Live Website</span>
+          <span>↗</span>
+        </a>
+        <a href="#cs-module-1" class="btn-ghost" style="padding: 0.75rem 1.8rem; font-size: 0.7rem;" onclick="scrollToSection('cs-module-1')">
+          <span>Explore Featured SEO Engine</span>
+          <span>↓</span>
+        </a>
+      </div>
+
+      <!-- Key Metrics Grid -->
+      <div class="cs-metrics-grid">
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">8</span>
+          <span class="cs-metric-label">Core Modules</span>
+          <p class="cs-metric-sub">All-in-one operational digitization from HR to Telemarketing.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">15+</span>
+          <span class="cs-metric-label">SEO Parameters</span>
+          <p class="cs-metric-sub">Real-time NLP analysis with Indonesian transition words engine.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">6-Stage</span>
+          <span class="cs-metric-label">HR ATS Pipeline</span>
+          <p class="cs-metric-sub">Comprehensive talent acquisition from Applied to Accepted.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">7-Stage</span>
+          <span class="cs-metric-label">CRM Sales Funnel</span>
+          <p class="cs-metric-sub">Baja Ringan estimation leads integrated with WhatsApp &amp; Excel.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">95KB+</span>
+          <span class="cs-metric-label">Candidate Modal</span>
+          <p class="cs-metric-sub">Deep verification covering education, certs, family &amp; health screening.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">53KB+</span>
+          <span class="cs-metric-label">Canvas Studio</span>
+          <p class="cs-metric-sub">Client-side crop, rotate, flip &amp; filters directly inside browser.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">GIS</span>
+          <span class="cs-metric-label">Map Visualizer</span>
+          <p class="cs-metric-sub">Auto lat-long resolver from Google Maps shortlinks via Leaflet.js.</p>
+        </div>
+        <div class="cs-metric-box">
+          <span class="cs-metric-num">Dual</span>
+          <span class="cs-metric-label">RBAC Security</span>
+          <p class="cs-metric-sub">Frontend Vue Navigation Guards + Laravel Sanctum Permissions.</p>
+        </div>
+      </div>
+
+      <!-- Interactive Nav Tabs -->
+      <div class="cs-nav-tabs">
+        <button type="button" class="cs-tab-btn active" onclick="filterCaseStudyTab('all', this)">All Sections</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('tech', this)">Tech Architecture</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-1', this)">1. Yoast SEO &amp; AI</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-2', this)">2. HR ATS</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-3', this)">3. CRM Leads</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-4', this)">4. GIS Branch Map</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-5', this)">5. Email Broadcast</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-6', this)">6. Image Studio</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-7', this)">7. Dashboard</button>
+        <button type="button" class="cs-tab-btn" onclick="filterCaseStudyTab('mod-8', this)">8. RBAC Security</button>
+      </div>
+
+      <!-- SECTION: TECH STACK & ARCHITECTURE -->
+      <div id="cs-tech" class="cs-tab-content">
+        <div class="cs-section-heading">
+          <h3>Tech Stack &amp; Architectural Layers</h3>
+        </div>
+        <table class="cs-tech-table">
+          <thead>
+            <tr>
+              <th style="width: 22%;">Layer</th>
+              <th style="width: 38%;">Teknologi &amp; Library</th>
+              <th style="width: 40%;">Deskripsi Peran</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="cs-tech-badge">Frontend Admin</span></td>
+              <td>Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, Vite</td>
+              <td>Performa render tinggi, tipe data aman (type-safe), dan reaktivitas modern.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Styling &amp; UI</span></td>
+              <td>Tailwind CSS, PrimeVue, Lucide Icons</td>
+              <td>Desain enterprise modern, konsisten, responsif, dan mendukung Dark Mode.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">State &amp; Routing</span></td>
+              <td>Pinia Store, Vue Router 4</td>
+              <td>Manajemen state modular (authStore, postStore, dll.) &amp; RBAC Navigation Guards.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Peta &amp; Visualisasi</span></td>
+              <td>Leaflet.js, Chart.js</td>
+              <td>Visualisasi data geolokasi cabang dan grafik analitik traffic real-time.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Data &amp; Media</span></td>
+              <td>SheetJS (XLSX), Canvas In-Browser Editor</td>
+              <td>Ekspor/impor spreadsheet leads &amp; manipulasi gambar langsung di browser.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Backend API</span></td>
+              <td>Laravel 10/11 REST API, Laravel Sanctum</td>
+              <td>API performa tinggi, middleware RBAC granular, token security, &amp; rate limiting.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Microservice / AI</span></td>
+              <td>Python FastAPI (seo-engine)</td>
+              <td>Service komputasi analitik NLP dan AI SEO generator.</td>
+            </tr>
+            <tr>
+              <td><span class="cs-tech-badge">Database &amp; DevOps</span></td>
+              <td>PostgreSQL, Docker, Docker Compose</td>
+              <td>Database relasional enterprise berkeandalan tinggi dan multi-container orchestration.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- SECTION: 8 CORE MODULES -->
+      <div id="cs-modules-wrapper">
+        <div class="cs-section-heading">
+          <h3>Modul &amp; Fitur Utama (Deep Dive)</h3>
+        </div>
+
+        <!-- MODULE 1 -->
+        <div id="cs-module-1" class="cs-module-card flagship cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 01 · Fitur Unggulan</p>
+              <h4 class="cs-module-title">In-House Yoast-Style SEO Engine &amp; Content Publishing</h4>
+            </div>
+            <span class="cs-module-pill">NLP &amp; AI Microservice</span>
+          </div>
+          <p class="cs-module-intro">
+            Bukan sekadar form input artikel biasa, modul ini merupakan mesin analitik SEO canggih mandiri (sekelas Yoast SEO WordPress) yang berjalan di atas FastAPI microservice dengan integrasi real-time ke editor artikel Vue 3.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Real-Time SEO &amp; Readability Analyzer</h5>
+              <p class="cs-subfeat-desc">
+                Menganalisis konten secara real-time saat penulis mengetik berdasarkan <strong>15+ parameter</strong> (kepadatan kata kunci/fokus, sebaran subheading H2/H3, panjang kalimat, panjang paragraf, dan keterbacaan). Dilengkapi algoritma deteksi kata hubung (<em>transition words</em>) khusus Bahasa Indonesia (<em>namun, oleh karena itu, sehingga, selain itu, dll.</em>).
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">AI SEO Generator Assistant</h5>
+              <p class="cs-subfeat-desc">
+                Secara otomatis menghasilkan rekomendasi <strong>Focus Keyphrase</strong>, <strong>SEO Title</strong> yang memenuhi standar Google (40–65 karakter), serta <strong>Meta Description persuasif</strong> (110–160 karakter) menggunakan LLM pipeline cerdas.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Live SERP &amp; Social Preview</h5>
+              <p class="cs-subfeat-desc">
+                Simulasi tampilan Google Search (Desktop &amp; Mobile view) serta kartu OpenGraph / Twitter Card Preview sebelum artikel di-publish, menjamin tampilan optimal saat dibagikan ke jejaring sosial.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">SEO Audit Dashboard &amp; Anti-Bot Tracker</h5>
+              <p class="cs-subfeat-desc">
+                Menampilkan skor kesehatan rata-rata seluruh artikel, distribusi skor SEO (0–100), alert artikel yang butuh perbaikan (<em>Needs Work</em>), Quick Edit Modal untuk revisi meta tanpa keluar dari tabel audit, serta tracking pengunjung dengan 24-hour Device ID deduplication.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 2 -->
+        <div id="cs-module-2" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 02 · Talent Acquisition</p>
+              <h4 class="cs-module-title">HR Recruitment &amp; Applicant Tracking System (ATS)</h4>
+            </div>
+            <span class="cs-module-pill">95KB+ Architecture</span>
+          </div>
+          <p class="cs-module-intro">
+            Modul manajemen karir komprehensif yang menyederhanakan proses talent acquisition perusahaan di seluruh cabang manufaktur Kencana di Indonesia.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Job Posting Lifecycle</h5>
+              <p class="cs-subfeat-desc">
+                Buat lowongan baru, publikasikan, perpanjang deadline (<em>extend deadline</em>), atau tutup lowongan (<em>close job</em> dengan opsi otomatis menolak pelamar tersisa dengan notifikasi email resmi).
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Interactive Candidate Pipeline</h5>
+              <p class="cs-subfeat-desc">
+                Pemantauan status pelamar bertahap 6 tahap: <strong>Applied → Screening → Interview → Offered → Accepted → Rejected</strong> dengan visual funnel dan status batch update.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Deep Candidate Profile Modal (95KB+ Module)</h5>
+              <p class="cs-subfeat-desc">
+                Verifikasi pelamar secara komprehensif: Data Diri, Riwayat Pendidikan, Pengalaman Kerja, Sertifikasi Keahlian, Data Keluarga, hingga Screening Riwayat Kesehatan dan akses preview dokumen CV/Portfolio langsung di browser.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Integrated Email Sender &amp; Analytics</h5>
+              <p class="cs-subfeat-desc">
+                Kirim undangan wawancara atau surat penerimaan/penolakan resmi langsung dari sistem ke email pelamar dengan template dinamis dan riwayat Email Log lengkap, didukung analitik rasio konversi rekrutmen.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 3 -->
+        <div id="cs-module-3" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 03 · Sales Conversion</p>
+              <h4 class="cs-module-title">CRM Estimasi Baja Ringan &amp; Telemarketing Leads</h4>
+            </div>
+            <span class="cs-module-pill">WhatsApp &amp; SheetJS</span>
+          </div>
+          <p class="cs-module-intro">
+            Menghubungkan fitur kalkulator interaktif di website publik Kencana dengan tim sales dan telemarketing secara seamless.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Inbound Lead Processing</h5>
+              <p class="cs-subfeat-desc">
+                Menampung hasil perhitungan dari publik untuk konstruksi <strong>Rangka Atap</strong>, <strong>Kebutuhan Genteng/Atap</strong>, <strong>Para-Para</strong>, dan <strong>Plafon Furing</strong> lengkap dengan spesifikasi teknis dan dimensi proyek.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">7-Stage Sales Pipeline</h5>
+              <p class="cs-subfeat-desc">
+                Alur status prospek yang terstruktur: <strong>Inbound CS → Pending → Contacted → Follow Up → Escalated → Order → Completed</strong> untuk menjamin tidak ada prospek yang tertinggal.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Closing &amp; Conversion Tracking</h5>
+              <p class="cs-subfeat-desc">
+                Pencatatan nomor Surat Pesanan (SP), nominal closing transaksi (<em>order amount</em>), dan histori tim yang menangani (<em>contacted by</em>) untuk evaluasi performa sales.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">One-Click WhatsApp &amp; Excel Export</h5>
+              <p class="cs-subfeat-desc">
+                Tombol kontak instan via WhatsApp Web/App dengan pesan pembuka otomatis sesuai kode tiket estimasi serta fitur ekspor data prospek ke format Microsoft Excel (.xlsx) via SheetJS.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 4 -->
+        <div id="cs-module-4" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 04 · Geolocation &amp; Logistics</p>
+              <h4 class="cs-module-title">Interactive GIS Branch Network (Jaringan Cabang)</h4>
+            </div>
+            <span class="cs-module-pill">Leaflet.js &amp; Geo-Parser</span>
+          </div>
+          <p class="cs-module-intro">
+            Pengelolaan dan visualisasi jaringan distributor, depo, dan cabang resmi PT Kencana Maju Bersama di seluruh wilayah Indonesia.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Master Jaringan Distributor &amp; Cabang</h5>
+              <p class="cs-subfeat-desc">
+                Pengelolaan database cabang seluruh Indonesia lengkap dengan alamat, nomor kontak, jam operasional, coverage logistik, dan status aktif cabang.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Leaflet.js Map Visualizer</h5>
+              <p class="cs-subfeat-desc">
+                Penentuan titik lokasi berbasis koordinat latitude &amp; longitude secara presisi pada peta interaktif Leaflet.js dengan custom markers dan info popups interaktif.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Smart Google Maps URL Resolver</h5>
+              <p class="cs-subfeat-desc">
+                Otomasi backend yang mampu mengekstrak koordinat lat-long secara otomatis hanya dari input tautan pendek (<em>shortlink / maps.app.goo.gl</em>) Google Maps tanpa input manual.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Public Sync Integration</h5>
+              <p class="cs-subfeat-desc">
+                Sinkronisasi data cabang secara real-time ke website publik Kencana untuk mempermudah konsumen menemukan toko dan distributor terdekat dari lokasi mereka.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 5 -->
+        <div id="cs-module-5" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 05 · Marketing Automation</p>
+              <h4 class="cs-module-title">Email Marketing &amp; Newsletter Broadcast</h4>
+            </div>
+            <span class="cs-module-pill">Campaign Broadcast</span>
+          </div>
+          <p class="cs-module-intro">
+            Sistem automasi pengiriman kampanye pemasaran dan newsletter terpusat dengan kepatuhan anti-spam ketat.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Subscriber Management</h5>
+              <p class="cs-subfeat-desc">
+                Manajemen daftar penerima newsletter dengan filter status (aktif / berhenti langganan), audit log pendaftaran, dan ekspor data subscriber ke spreadsheet.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Broadcast Campaign Composer</h5>
+              <p class="cs-subfeat-desc">
+                Fitur membuat kampanye email masal dengan rich-text composer, opsi pengiriman uji coba (<em>Test Send</em>) ke email tim internal, serta penjadwalan (<em>Schedule vs Send Now</em>).
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Anti-Spam &amp; Public Unsubscribe</h5>
+              <p class="cs-subfeat-desc">
+                Sistem rate-limiting ketat pada form publik dan kepatuhan terhadap regulasi email internasional dengan tautan one-click unsubscribe yang memproses status secara otomatis.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Campaign Delivery Logs</h5>
+              <p class="cs-subfeat-desc">
+                Audit trail lengkap status pengiriman email broadcast (sent, queued, failed, bounced) untuk memonitor kesehatan server email pengirim.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 6 -->
+        <div id="cs-module-6" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 06 · Client-Side Image Studio</p>
+              <h4 class="cs-module-title">Media Asset Management &amp; In-Browser Image Editor</h4>
+            </div>
+            <span class="cs-module-pill">53KB+ Component</span>
+          </div>
+          <p class="cs-module-intro">
+            Pengelolaan aset media enterprise dilengkapi studio manipulasi gambar berbasis HTML5 Canvas langsung di browser pengguna.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Central Media Library</h5>
+              <p class="cs-subfeat-desc">
+                Manajemen aset gambar/dokumen dengan tampilan Grid/List view, metadata resolusi dimensi, kapasitas file, serta pengelolaan alt text dan caption yang ramah SEO Google.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">In-Browser Image Studio (53KB+ Component)</h5>
+              <p class="cs-subfeat-desc">
+                Fitur canggih untuk memotong (<em>crop</em>), memutar (<em>rotate</em>), membalik (<em>flip</em>), dan menyesuaikan filter gambar langsung di browser tanpa perlu software grafis pihak ketiga sebelum disematkan ke artikel atau produk.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Auto WebP Compression</h5>
+              <p class="cs-subfeat-desc">
+                Optimasi otomatis ukuran file gambar ke format modern berkapasitas ringan untuk mempercepat load time website publik hingga 35%.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Direct Asset Injection</h5>
+              <p class="cs-subfeat-desc">
+                Integrasi satu klik menyisipkan aset dari media library ke dalam artikel blog, katalog produk baja ringan, atau materi kampanye email.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 7 -->
+        <div id="cs-module-7" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 07 · Executive Intelligence</p>
+              <h4 class="cs-module-title">Executive Dashboard &amp; Real-Time Traffic Analytics</h4>
+            </div>
+            <span class="cs-module-pill">Chart.js Analytics</span>
+          </div>
+          <p class="cs-module-intro">
+            Pusat kendali eksekutif yang menyajikan indikator kinerja utama (KPI) lintas departemen perusahaan secara real-time.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Unified Business Metrics</h5>
+              <p class="cs-subfeat-desc">
+                Menampilkan statistik lintas departemen dalam satu layar: SEO Health Overview, Recruitment Funnel, Telemarketing Conversion, dan Traffic Web.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Interactive Chart.js Visuals</h5>
+              <p class="cs-subfeat-desc">
+                Tren kunjungan harian, distribusi perangkat (Mobile vs Desktop), bounce rate, dan ranking halaman terpopuler via visualisasi interaktif Chart.js.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Dashboard Live Activity</h5>
+              <p class="cs-subfeat-desc">
+                Log audit aktivitas pengguna langsung (user logins, content updates, new candidate submissions, new sales leads) yang ter-refresh secara real-time.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Quick Draft Widget</h5>
+              <p class="cs-subfeat-desc">
+                Widget menulis artikel cepat (<em>Quick Draft</em>) langsung dari beranda untuk mencatat ide dan ringkasan berita sebelum dikembangkan ke artikel penuh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODULE 8 -->
+        <div id="cs-module-8" class="cs-module-card cs-tab-content">
+          <div class="cs-module-head">
+            <div>
+              <p class="cs-module-num">Modul 08 · Security &amp; Compliance</p>
+              <h4 class="cs-module-title">Enterprise RBAC &amp; Security Infrastructure</h4>
+            </div>
+            <span class="cs-module-pill">Sanctum &amp; Guards</span>
+          </div>
+          <p class="cs-module-intro">
+            Infrastruktur keamanan berlapis dengan pemisahan peran yang ketat, perlindungan API, serta tata kelola konfigurasi global website.
+          </p>
+          <div class="cs-subfeatures">
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Granular Role-Based Access Control</h5>
+              <p class="cs-subfeat-desc">
+                Pemisahan peran ketat antara <strong>Super Admin</strong>, <strong>Admin</strong>, <strong>Content Writer</strong>, <strong>HR</strong>, dan <strong>Telemarketing</strong>, mencegah akses silang departemen yang tidak berwenang.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Dual-Layer Defense Mechanism</h5>
+              <p class="cs-subfeat-desc">
+                Perlindungan ganda: <strong>Frontend Vue Navigation Guard</strong> (otomatis sembunyikan menu &amp; tangani redirect 403 Forbidden) serta <strong>Laravel Sanctum Permissions Middleware</strong> di backend.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">API Hardening &amp; Rate Limiting</h5>
+              <p class="cs-subfeat-desc">
+                Perlindungan terhadap brute-force attack dengan pembatasan request (<em>rate throttling</em>), hash enkripsi password/token, dan validasi bearer token Sanctum ketat.
+              </p>
+            </div>
+            <div class="cs-subfeat-item">
+              <h5 class="cs-subfeat-title">Global Enterprise Settings</h5>
+              <p class="cs-subfeat-desc">
+                Konfigurasi Schema.org JSON-LD (Rich Snippet Google), Google Analytics 4 &amp; Google Tag Manager ID, Webmaster Site Verification, serta preferensi tema Dark/Light mode sistem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cs-modules-wrapper -->
+
+      <!-- Modal Footer -->
+      <div class="cs-modal-footer">
+        <div>
+          <p style="font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent);">
+            Impact &amp; Architecture Summary
+          </p>
+          <p style="font-size: 0.85rem; color: rgba(240,235,224,0.7); max-width: 32rem; margin-top: 0.4rem; line-height: 1.6;">
+            Platform ini sukses menggantikan CMS WordPress lama dengan sistem modular berkinerja tinggi, memangkas proses rekrutmen HR, mempercepat respons telemarketing leads, dan mengangkat skor SEO konten Kencana.
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <a href="https://kencanaindonesia.co.id/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 0.65rem 1.5rem; font-size: 0.68rem;">
+            <span>Visit Live Website</span>
+            <span>↗</span>
+          </a>
+          <button type="button" class="btn-ghost" style="padding: 0.65rem 1.5rem; font-size: 0.68rem; cursor: pointer;" onclick="closeCaseStudyModal()">
+            <span>Close Modal</span>
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /cs-modal-body -->
+  </div><!-- /cs-modal-window -->
+</div>
+
 <footer>
   <p class="footer-copy">© 2025 Devita Melya — All rights reserved</p>
   <a href="#hero" class="footer-back">Back to top ↑</a>
@@ -1254,9 +2345,92 @@ Download CV
     requestAnimationFrame(animCursor);
   }
   animCursor();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.borderColor = 'rgba(200,169,110,0.8)'; });
-    el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(200,169,110,0.5)'; });
+
+  // Case Study Modal Handlers
+  function openCaseStudyModal(e) {
+    if (e) e.preventDefault();
+    const modal = document.getElementById('case-study-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
+  }
+
+  function closeCaseStudyModal() {
+    const modal = document.getElementById('case-study-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function handleBackdropClick(e) {
+    if (e.target && e.target.id === 'case-study-modal') {
+      closeCaseStudyModal();
+    }
+  }
+
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function filterCaseStudyTab(tabId, btn) {
+    document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    const techSec = document.getElementById('cs-tech');
+    const modules = document.querySelectorAll('.cs-module-card');
+
+    if (tabId === 'all') {
+      if (techSec) techSec.style.display = 'block';
+      modules.forEach(m => m.style.display = 'block');
+    } else if (tabId === 'tech') {
+      if (techSec) {
+        techSec.style.display = 'block';
+        techSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      modules.forEach(m => m.style.display = 'none');
+    } else {
+      if (techSec) techSec.style.display = 'none';
+      const modMap = {
+        'mod-1': 'cs-module-1',
+        'mod-2': 'cs-module-2',
+        'mod-3': 'cs-module-3',
+        'mod-4': 'cs-module-4',
+        'mod-5': 'cs-module-5',
+        'mod-6': 'cs-module-6',
+        'mod-7': 'cs-module-7',
+        'mod-8': 'cs-module-8'
+      };
+      const targetId = modMap[tabId];
+      modules.forEach(m => {
+        if (m.id === targetId) {
+          m.style.display = 'block';
+          m.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          m.style.display = 'none';
+        }
+      });
+    }
+  }
+
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCaseStudyModal();
+  });
+
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest('a, button, .project-item, .cs-tab-btn')) {
+      ring.style.transform = 'translate(-50%,-50%) scale(1.8)';
+      ring.style.borderColor = 'rgba(200,169,110,0.8)';
+    }
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest('a, button, .project-item, .cs-tab-btn')) {
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.borderColor = 'rgba(200,169,110,0.5)';
+    }
   });
 
   const revealEls = document.querySelectorAll('.reveal');

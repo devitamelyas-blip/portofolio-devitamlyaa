@@ -11,5 +11,27 @@ function toggleLanguage() {
 
 function toggleModal(id) {
     const modal = document.getElementById(id);
-    modal.classList.toggle('hidden');
+    if (modal) modal.classList.toggle('hidden');
+}
+
+function openCaseStudyModal(e) {
+    if (e) e.preventDefault();
+    const modal = document.getElementById('case-study-modal');
+    if (!modal) return;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    modal.scrollTop = 0;
+}
+
+function closeCaseStudyModal() {
+    const modal = document.getElementById('case-study-modal');
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function handleBackdropClick(e) {
+    if (e.target && e.target.id === 'case-study-modal') {
+        closeCaseStudyModal();
+    }
 }

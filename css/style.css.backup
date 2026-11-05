@@ -1,5 +1,4 @@
-
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
     --cream: #F0EBE0;
@@ -670,4 +669,483 @@
     #contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
     footer { padding: 1.5rem; flex-direction: column; gap: 1rem; }
     .scroll-hint { display: none; }
+  }
+
+  /* Experience & Action Buttons */
+  .exp-cs-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.15rem;
+    background: var(--accent);
+    color: var(--ink);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid var(--accent);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .exp-cs-btn:hover {
+    background: var(--cream);
+    border-color: var(--cream);
+    color: var(--ink);
+  }
+  .exp-site-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.15rem;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .exp-site-link:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Featured Project Item */
+  .project-item-featured {
+    background: linear-gradient(90deg, rgba(200,169,110,0.08) 0%, rgba(200,169,110,0.01) 100%);
+    border-left: 3px solid var(--accent);
+    padding-left: 1.25rem !important;
+    cursor: pointer;
+  }
+  .project-item-featured:hover {
+    background: linear-gradient(90deg, rgba(200,169,110,0.14) 0%, rgba(200,169,110,0.03) 100%);
+    padding-left: 1.75rem !important;
+  }
+  .project-flagship-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,169,110,0.45);
+    background: rgba(200,169,110,0.1);
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+    width: fit-content;
+  }
+  .ptag-gold {
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    background: rgba(200,169,110,0.08);
+  }
+  .project-action-row {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.65rem;
+  }
+  .project-cs-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px dashed var(--accent);
+    padding: 0 0 2px 0;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .project-item-featured:hover .project-cs-action-btn {
+    border-bottom-style: solid;
+    gap: 0.6rem;
+  }
+  .project-live-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .project-live-link:hover {
+    color: var(--accent);
+  }
+
+  /* Case Study Modal Styles */
+  .cs-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(8, 7, 5, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 9000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2.5rem 1.5rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    overflow-y: auto;
+  }
+  .cs-modal-backdrop.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .cs-modal-window {
+    background: #110F0C;
+    border: 1px solid rgba(200,169,110,0.35);
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    box-shadow: 0 35px 100px rgba(0,0,0,0.95), 0 0 60px rgba(200,169,110,0.08);
+    transform: translateY(24px) scale(0.98);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    margin: auto;
+    color: var(--cream);
+  }
+  .cs-modal-backdrop.active .cs-modal-window {
+    transform: translateY(0) scale(1);
+  }
+  .cs-modal-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(17, 15, 12, 0.96);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 1.1rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cs-topbar-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .cs-topbar-tag .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #4ADE80;
+    box-shadow: 0 0 8px #4ADE80;
+    display: inline-block;
+  }
+  .cs-modal-close {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cs-modal-close:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cs-modal-body {
+    padding: 3rem 2.5rem 4rem;
+  }
+  .cs-hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .cs-modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+  }
+  .cs-modal-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .cs-modal-lead {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(240,235,224,0.75);
+    max-width: 52rem;
+    margin-bottom: 2rem;
+  }
+  .cs-meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3rem;
+  }
+  .cs-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .cs-meta-k {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cs-meta-v {
+    font-size: 0.82rem;
+    color: var(--cream);
+    font-weight: 400;
+  }
+  .cs-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 3.5rem;
+    border: 1px solid var(--rule);
+  }
+  .cs-metric-box {
+    background: #110F0C;
+    padding: 1.5rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cs-metric-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .cs-metric-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .cs-metric-sub {
+    font-size: 0.75rem;
+    color: rgba(240,235,224,0.6);
+    line-height: 1.45;
+  }
+  .cs-nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 2.5rem;
+    position: sticky;
+    top: 4.2rem;
+    z-index: 15;
+    background: rgba(17, 15, 12, 0.94);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-tab-btn {
+    background: transparent;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cs-tab-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .cs-tab-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .cs-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3.5rem 0 1.75rem;
+  }
+  .cs-section-heading h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    color: var(--off-white);
+  }
+  .cs-section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .cs-tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 3.5rem;
+    border: 1px solid var(--rule);
+  }
+  .cs-tech-table th {
+    background: rgba(200,169,110,0.08);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-align: left;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cs-tech-table td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: rgba(240,235,224,0.8);
+    vertical-align: top;
+  }
+  .cs-tech-table tr:hover td {
+    background: rgba(200,169,110,0.03);
+  }
+  .cs-tech-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--cream);
+    font-weight: 500;
+  }
+  .cs-module-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--rule);
+    padding: 2.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: border-color 0.3s;
+  }
+  .cs-module-card:hover {
+    border-color: rgba(200,169,110,0.5);
+  }
+  .cs-module-card.flagship {
+    background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, rgba(255,255,255,0.01) 100%);
+    border-color: rgba(200,169,110,0.5);
+  }
+  .cs-module-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .cs-module-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.4rem;
+  }
+  .cs-module-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 400;
+    color: var(--off-white);
+  }
+  .cs-module-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(200,169,110,0.4);
+    background: rgba(200,169,110,0.06);
+    padding: 0.25rem 0.65rem;
+  }
+  .cs-module-intro {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(240,235,224,0.75);
+    margin-bottom: 1.5rem;
+  }
+  .cs-subfeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+  .cs-subfeat-item {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(200,169,110,0.15);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .cs-subfeat-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .cs-subfeat-title::before {
+    content: '◆';
+    color: var(--accent);
+    font-size: 0.6rem;
+  }
+  .cs-subfeat-desc {
+    font-size: 0.78rem;
+    line-height: 1.65;
+    color: rgba(240,235,224,0.65);
+  }
+  .cs-modal-footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 2.5rem;
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .cs-modal-backdrop { padding: 0.75rem 0.5rem; }
+    .cs-modal-topbar { padding: 0.8rem 1.2rem; }
+    .cs-modal-body { padding: 1.8rem 1.2rem; }
+    .cs-metrics-grid { grid-template-columns: 1fr 1fr; }
+    .cs-subfeatures { grid-template-columns: 1fr; }
+    .cs-tech-table th, .cs-tech-table td { padding: 0.75rem 0.6rem; font-size: 0.75rem; }
+    .cs-modal-footer { flex-direction: column; align-items: flex-start; }
+    .project-item-featured { padding-left: 0.75rem !important; }
   }
