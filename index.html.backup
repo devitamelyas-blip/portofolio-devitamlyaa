@@ -32,7 +32,6 @@
     cursor: none;
   }
 
-  /* Custom Cursor */
   .cursor {
     position: fixed;
     top: 0; left: 0;
@@ -57,7 +56,6 @@
   }
   body:hover .cursor-ring { opacity: 1; }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -98,7 +96,6 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
   #hero {
     min-height: 100vh;
     display: grid;
@@ -125,7 +122,6 @@
     to   { transform: scale(1.05); clip-path: inset(0 0% 0 0); }
   }
 
-  /* Vertical text on image */
   .hero-img-label {
     position: absolute;
     bottom: 3rem;
@@ -138,7 +134,6 @@
     color: rgba(240,235,224,0.5);
   }
 
-  /* Photo overlay gradient */
   .hero-img-col::after {
     content: '';
     position: absolute;
@@ -277,7 +272,6 @@
   }
   .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Scroll indicator */
   .scroll-hint {
     position: absolute;
     bottom: 3rem;
@@ -324,7 +318,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* MARQUEE STRIP */
   .marquee-strip {
     background: var(--accent);
     padding: 0.85rem 0;
@@ -360,7 +353,6 @@
     to   { transform: translateX(-50%); }
   }
 
-  /* SKILLS SECTION */
   #skills {
     padding: 7rem 4rem;
     display: grid;
@@ -448,7 +440,6 @@
   }
   .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* PROJECTS */
   #projects {
     padding: 7rem 4rem;
     border-bottom: 1px solid var(--rule);
@@ -516,7 +507,6 @@
     border: 1px solid var(--rule);
     padding: 0.25rem 0.6rem;
   }
-  /* Hover image preview */
   .project-preview {
     position: fixed;
     pointer-events: none;
@@ -545,7 +535,6 @@
     text-align: center;
   }
 
-  /* EXPERIENCE */
   #experience {
     padding: 7rem 4rem;
     border-bottom: 1px solid var(--rule);
@@ -602,7 +591,6 @@
     margin-bottom: 1rem;
   }
 
-  /* CONTACT */
   #contact {
     padding: 8rem 4rem;
     display: grid;
@@ -664,7 +652,6 @@
   }
   .contact-link-item:hover .cli-arrow { transform: translateX(4px) translateY(-4px); color: var(--accent); }
 
-  /* FOOTER */
   footer {
     padding: 2rem 4rem;
     display: flex;
@@ -692,7 +679,6 @@
   }
   .footer-back:hover { color: var(--accent); }
 
-  /* REVEAL ON SCROLL */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -703,7 +689,6 @@
   .reveal-delay-2 { transition-delay: 0.22s; }
   .reveal-delay-3 { transition-delay: 0.34s; }
 
-  /* Mobile */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     nav::after { left: 1.5rem; right: 1.5rem; }
@@ -726,26 +711,23 @@
 </head>
 <body>
 
-<!-- Custom Cursor -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
-<!-- Hover Preview -->
 <div class="project-preview" id="project-preview">
   <p class="project-preview-label">Preview tidak tersedia<br>untuk demo ini</p>
 </div>
 
-<!-- NAV -->
 <nav>
   <a href="#hero" class="nav-logo">DM</a>
   <ul class="nav-links">
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="https://github.com/devitamelyas-blip" target="_blank">GitHub</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-img-col">
     <img src="assets/images/foto_1.jpg" alt="Devita Melya">
@@ -783,7 +765,6 @@ Information Technology graduate from Universitas Brawijaya with hands-on experie
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="marquee-strip" aria-hidden="true">
   <div class="marquee-track">
 
@@ -809,7 +790,6 @@ Information Technology graduate from Universitas Brawijaya with hands-on experie
   </div>
 </div>
 
-<!-- SKILLS -->
 <section id="skills">
 
 <div class="skills-header reveal">
@@ -909,7 +889,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <div class="projects-head reveal">
     <div>
@@ -1105,11 +1084,29 @@ Experienced in enterprise web development, full-stack systems, and modern applic
     </div>
   </a>
 
+  <a href="https://github.com/devitamelyas-blip/portofolio-devitamlyaa" target="_blank" class="project-item">
+    <span class="project-num">11</span>
+
+    <span class="project-name">
+      Personal Portfolio Website
+    </span>
+
+    <span class="project-desc">
+      Personal portfolio website designed and developed to showcase software engineering projects, technical skills, and career journey with custom interactive styling.
+    </span>
+
+    <div class="project-tags">
+      <span class="ptag">HTML5</span>
+      <span class="ptag">CSS3</span>
+      <span class="ptag">JavaScript</span>
+      <span class="ptag">GitHub</span>
+    </div>
+  </a>
+
 
 </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
 
 <div class="reveal">
@@ -1168,6 +1165,28 @@ devitamelyas@gmail.com
 </a>
 
 
+<a href="https://github.com/devitamelyas-blip"
+target="_blank"
+class="contact-link-item">
+
+<div>
+
+<span class="cli-label">
+GitHub
+</span>
+
+<span class="cli-value">
+github.com/devitamelyas-blip
+</span>
+
+</div>
+
+<span class="cli-arrow">
+↗
+</span>
+
+</a>
+
 <a href="https://www.linkedin.com/in/devita-melya-b009aa3ab/"
 target="_blank"
 class="contact-link-item">
@@ -1217,14 +1236,12 @@ Download CV
 
 </section>
 
-<!-- FOOTER -->
 <footer>
   <p class="footer-copy">© 2025 Devita Melya — All rights reserved</p>
   <a href="#hero" class="footer-back">Back to top ↑</a>
 </footer>
 
 <script>
-  // Cursor
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursor-ring');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -1241,7 +1258,6 @@ Download CV
     el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(200,169,110,0.5)'; });
   });
 
-  // Project hover preview
   const preview = document.getElementById('project-preview');
   document.querySelectorAll('.project-item').forEach(item => {
     item.addEventListener('mouseenter', () => preview.classList.add('active'));
@@ -1252,7 +1268,6 @@ Download CV
     });
   });
 
-  // Scroll reveal
   const revealEls = document.querySelectorAll('.reveal');
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });

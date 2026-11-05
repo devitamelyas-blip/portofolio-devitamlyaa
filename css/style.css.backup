@@ -23,7 +23,6 @@
     cursor: none;
   }
 
-  /* Custom Cursor */
   .cursor {
     position: fixed;
     top: 0; left: 0;
@@ -48,7 +47,6 @@
   }
   body:hover .cursor-ring { opacity: 1; }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -89,7 +87,6 @@
   }
   .nav-links a:hover { color: var(--accent); }
 
-  /* HERO */
   #hero {
     min-height: 100vh;
     display: grid;
@@ -116,7 +113,6 @@
     to   { transform: scale(1.05); clip-path: inset(0 0% 0 0); }
   }
 
-  /* Vertical text on image */
   .hero-img-label {
     position: absolute;
     bottom: 3rem;
@@ -129,7 +125,6 @@
     color: rgba(240,235,224,0.5);
   }
 
-  /* Photo overlay gradient */
   .hero-img-col::after {
     content: '';
     position: absolute;
@@ -268,7 +263,6 @@
   }
   .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* Scroll indicator */
   .scroll-hint {
     position: absolute;
     bottom: 3rem;
@@ -315,7 +309,6 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* MARQUEE STRIP */
   .marquee-strip {
     background: var(--accent);
     padding: 0.85rem 0;
@@ -351,7 +344,6 @@
     to   { transform: translateX(-50%); }
   }
 
-  /* SKILLS SECTION */
   #skills {
     padding: 7rem 4rem;
     display: grid;
@@ -439,7 +431,6 @@
   }
   .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* PROJECTS */
   #projects {
     padding: 7rem 4rem;
     border-bottom: 1px solid var(--rule);
@@ -507,7 +498,6 @@
     border: 1px solid var(--rule);
     padding: 0.25rem 0.6rem;
   }
-  /* Hover image preview */
   .project-preview {
     position: fixed;
     pointer-events: none;
@@ -536,7 +526,6 @@
     text-align: center;
   }
 
-  /* EXPERIENCE */
   #experience {
     padding: 7rem 4rem;
     border-bottom: 1px solid var(--rule);
@@ -593,7 +582,6 @@
     margin-bottom: 1rem;
   }
 
-  /* CONTACT */
   #contact {
     padding: 8rem 4rem;
     display: grid;
@@ -655,7 +643,6 @@
   }
   .contact-link-item:hover .cli-arrow { transform: translateX(4px) translateY(-4px); color: var(--accent); }
 
-  /* FOOTER */
   footer {
     padding: 2rem 4rem;
     display: flex;
@@ -683,7 +670,6 @@
   }
   .footer-back:hover { color: var(--accent); }
 
-  /* REVEAL ON SCROLL */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -694,7 +680,6 @@
   .reveal-delay-2 { transition-delay: 0.22s; }
   .reveal-delay-3 { transition-delay: 0.34s; }
 
-  /* Mobile */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     nav::after { left: 1.5rem; right: 1.5rem; }
