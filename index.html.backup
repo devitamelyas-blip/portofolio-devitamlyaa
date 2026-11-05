@@ -507,33 +507,6 @@
     border: 1px solid var(--rule);
     padding: 0.25rem 0.6rem;
   }
-  .project-preview {
-    position: fixed;
-    pointer-events: none;
-    width: 220px;
-    height: 150px;
-    background: var(--ink-mid);
-    border: 1px solid var(--rule);
-    overflow: hidden;
-    opacity: 0;
-    transform: scale(0.9) rotate(-2deg);
-    transition: opacity 0.3s, transform 0.4s;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .project-preview.active {
-    opacity: 1;
-    transform: scale(1) rotate(-1deg);
-  }
-  .project-preview-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-align: center;
-  }
 
   #experience {
     padding: 7rem 4rem;
@@ -714,10 +687,6 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
-<div class="project-preview" id="project-preview">
-  <p class="project-preview-label">Preview tidak tersedia<br>untuk demo ini</p>
-</div>
-
 <nav>
   <a href="#hero" class="nav-logo">DM</a>
   <ul class="nav-links">
@@ -810,7 +779,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 </div>
 
-
 <div class="skills-grid reveal reveal-delay-1">
 
 <div class="skill-card">
@@ -829,7 +797,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 <span class="skill-pill">Bootstrap</span>
 </div>
 </div>
-
 
 <div class="skill-card">
 
@@ -850,7 +817,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 
 </div>
 
-
 <div class="skill-card">
 
 <p class="skill-tag">Database</p>
@@ -865,7 +831,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
 </div>
 
 </div>
-
 
 <div class="skill-card">
 
@@ -1123,7 +1088,6 @@ Experienced in enterprise web development, full-stack systems, and modern applic
     </div>
   </a>
 
-
 </div>
 </section>
 
@@ -1160,7 +1124,6 @@ class="btn-primary">
 
 </div>
 
-
 <div class="contact-links reveal reveal-delay-1">
 
 <a href="mailto:devitamelyas@gmail.com"
@@ -1183,7 +1146,6 @@ devitamelyas@gmail.com
 </span>
 
 </a>
-
 
 <a href="https://github.com/devitamelyas-blip"
 target="_blank"
@@ -1228,7 +1190,6 @@ linkedin.com/in/devita-melya
 </span>
 
 </a>
-
 
 <a href="assets/files/Devita Melya Sari-resume.pdf"
 download
@@ -1276,16 +1237,6 @@ Download CV
   document.querySelectorAll('a, button').forEach(el => {
     el.addEventListener('mouseenter', () => { ring.style.transform = 'translate(-50%,-50%) scale(1.8)'; ring.style.borderColor = 'rgba(200,169,110,0.8)'; });
     el.addEventListener('mouseleave', () => { ring.style.transform = 'translate(-50%,-50%) scale(1)'; ring.style.borderColor = 'rgba(200,169,110,0.5)'; });
-  });
-
-  const preview = document.getElementById('project-preview');
-  document.querySelectorAll('.project-item').forEach(item => {
-    item.addEventListener('mouseenter', () => preview.classList.add('active'));
-    item.addEventListener('mouseleave', () => preview.classList.remove('active'));
-    item.addEventListener('mousemove', e => {
-      preview.style.left = (e.clientX + 20) + 'px';
-      preview.style.top = (e.clientY - 75) + 'px';
-    });
   });
 
   const revealEls = document.querySelectorAll('.reveal');

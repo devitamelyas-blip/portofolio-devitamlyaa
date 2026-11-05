@@ -498,33 +498,6 @@
     border: 1px solid var(--rule);
     padding: 0.25rem 0.6rem;
   }
-  .project-preview {
-    position: fixed;
-    pointer-events: none;
-    width: 220px;
-    height: 150px;
-    background: var(--ink-mid);
-    border: 1px solid var(--rule);
-    overflow: hidden;
-    opacity: 0;
-    transform: scale(0.9) rotate(-2deg);
-    transition: opacity 0.3s, transform 0.4s;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .project-preview.active {
-    opacity: 1;
-    transform: scale(1) rotate(-1deg);
-  }
-  .project-preview-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    color: var(--muted);
-    letter-spacing: 0.1em;
-    text-align: center;
-  }
 
   #experience {
     padding: 7rem 4rem;
