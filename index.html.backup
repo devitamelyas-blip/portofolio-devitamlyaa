@@ -1088,6 +1088,26 @@ Experienced in enterprise web development, full-stack systems, and modern applic
     </div>
   </a>
 
+  <a href="https://urbanservices-qa.com/" target="_blank" class="project-item">
+    <span class="project-num">13</span>
+
+    <span class="project-name">
+      Urban Services Qatar — Commercial Web & Admin Platform
+    </span>
+
+    <span class="project-desc">
+      Commercial services platform for a Qatar-based client, developed during internship at CEBES Indonesia. Contributed as full-stack developer building user interfaces and admin management features, integrating .NET APIs with PostgreSQL, and resolving sprint tasks via GitHub.
+    </span>
+
+    <div class="project-tags">
+      <span class="ptag">.NET</span>
+      <span class="ptag">Vue.js</span>
+      <span class="ptag">Tailwind CSS</span>
+      <span class="ptag">PostgreSQL</span>
+      <span class="ptag">GitHub</span>
+    </div>
+  </a>
+
 </div>
 </section>
 
