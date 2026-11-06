@@ -1409,7 +1409,7 @@
     <div class="exp-item">
       <div>
         <p class="exp-period" data-i18n="exp1_period">Sep 2026 — Present</p>
-        <h3 class="exp-role" data-i18n="exp1_role">Software Developer</h3>
+        <h3 class="exp-role" data-i18n="exp1_role">Full Stack Developer</h3>
         <p class="exp-company">PT Kencana Maju Bersama · Surabaya</p>
       </div>
       <div>
@@ -2489,7 +2489,7 @@ linkedin.com/in/devita-melya
       exp_h2: "Pengalaman<br><em>Profesional</em>",
       exp_lead: "Rekam jejak terbukti dalam membangun platform back-office enterprise, ekosistem CMS kustom, dan arsitektur sistem di sektor manufaktur, BUMN, dan komersial.",
       exp1_period: "Sep 2026 — Sekarang",
-      exp1_role: "Software Developer",
+      exp1_role: "Full Stack Developer",
       exp1_badge: "CMS & Back-Office Enterprise Unggulan",
       exp1_desc1: "Merancang dan mengembangkan platform enterprise back-office serta CMS all-in-one untuk produsen baja ringan ber-SNI terkemuka di Indonesia. Memodernisasi infrastruktur lama WordPress menjadi arsitektur kustom berkinerja tinggi menggunakan Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, dan Python FastAPI.",
       exp1_desc2: "Membangun 8 modul operasional utama mencakup In-House Yoast-style SEO & AI Engine dengan analisis NLP bahasa Indonesia real-time (15+ parameter), Applicant Tracking System (ATS) HR, CRM telemarketing prospek estimasi baja ringan, jaringan cabang GIS Leaflet.js, studio canvas gambar in-browser, serta RBAC bertingkat.",
@@ -2550,7 +2550,7 @@ linkedin.com/in/devita-melya
       exp_h2: "Professional<br><em>Experience</em>",
       exp_lead: "Proven track record engineering enterprise back-office platforms, custom CMS ecosystems, and microservices across manufacturing, state-owned enterprise (BUMN), and commercial sectors.",
       exp1_period: "Sep 2026 — Present",
-      exp1_role: "Software Developer",
+      exp1_role: "Full Stack Developer",
       exp1_badge: "Flagship Enterprise CMS & Back-Office",
       exp1_desc1: "Architected and developed the all-in-one enterprise back-office system and CMS for Indonesia's premier SNI light steel manufacturer. Modernized the legacy WordPress infrastructure into a custom high-performance architecture using Vue 3 (&lt;script setup&gt;, Composition API), TypeScript, PrimeVue, Pinia, Laravel 11 REST API, and Python FastAPI.",
       exp1_desc2: "Delivered 8 core operational modules including an In-House Yoast-style SEO & AI engine with real-time Indonesian NLP analysis (15+ parameters), HR Applicant Tracking System (ATS), CRM Baja Ringan estimation telemarketing leads, Leaflet.js GIS branch network, in-browser canvas image studio, and dual-layer RBAC.",
